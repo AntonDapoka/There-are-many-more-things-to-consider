@@ -774,8 +774,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: There are many more things to consider
-  metroPackageVersion: 
+  metroPackageName: Therearemanymorethingstoconsider
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -783,7 +783,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: There are many more things to consider
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: There are many more things to consider
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
