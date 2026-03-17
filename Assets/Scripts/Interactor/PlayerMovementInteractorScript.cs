@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementInteractorScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject player;
+    private Rigidbody2D rb; 
+    [SerializeField] private Vector2 MovementSpeed = new Vector2(100.0f, 100.0f);
+
+    private Vector2 inputVector = Vector2.zero;
+
+    private void Awake()
     {
-        
+        rb = player.GetComponent<Rigidbody2D>();
+
+        rb.angularDrag = 0.0f;
+        rb.gravityScale = 0.0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetInput(Vector2 input)
     {
-        
+        inputVector = input.normalized;
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + (inputVector * MovementSpeed * Time.fixedDeltaTime));
     }
 }
