@@ -15,11 +15,6 @@ public class PlayerTextInteractorScript : MonoBehaviour
     [SerializeField] private int matchIndex = 0; 
     [SerializeField] private char lastChar;
 
-    private void Start()
-    {
-        SetNewTargetPhrase("I WANT WAR"); //remove
-    }
-
     public void SetNewTargetPhrase(string newPhrase)
     {
         currentTargetPhrase = NormalizePhrase(newPhrase);
@@ -86,5 +81,7 @@ public class PlayerTextInteractorScript : MonoBehaviour
         Debug.Log("Phrase completed!");
 
         playerTextPresenter.OnPhraseCompleted();
+        targetTextManager.OnThePhraseEnd();
+
     }
 }
