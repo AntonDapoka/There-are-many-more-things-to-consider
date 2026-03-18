@@ -31,6 +31,21 @@ public class SuicideEnemyScript : MonoBehaviour
         wobbleOffset = Random.insideUnitCircle * wobbleStrength;
     }
 
+    private void Start()
+    {
+        if (!agent.isOnNavMesh)
+        {
+            if (NavMesh.SamplePosition(ToNavMesh(transform.position), out NavMeshHit hit, 5f, NavMesh.AllAreas))
+            {
+                agent.Warp(hit.position);
+            }
+        }
+        else
+        {
+            agent.Warp(ToNavMesh(transform.position));
+        }
+    }
+
     private void Update()
     {
         if (!agent.isOnNavMesh) return;
