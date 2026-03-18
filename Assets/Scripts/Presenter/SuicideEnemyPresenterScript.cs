@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuicideEnemyPresenterScript : MonoBehaviour
+public class SuicideEnemyPresenterScript : EnemyPresenterScript
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Effect Settings")]
+    [SerializeField] private ParticleSystem explosionEffect;
+    [SerializeField] private AudioClip soundExplosion;
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySuicideEffect(Vector3 effectPosition)
     {
-        
+        if (enemyView == null)
+        {
+            Debug.LogWarning("View is not assigned!");
+            return;
+        }
+
+        enemyView.PlayEffect(explosionEffect, effectPosition);
+        enemyView.PlaySound(soundExplosion);
     }
 }

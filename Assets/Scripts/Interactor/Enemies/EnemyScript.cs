@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField] protected Transform playerTransform;
+    [SerializeField] protected EnemyPresenterScript enemyPresenter;
 
     [Header("Movement")]
     [SerializeField] protected float speedMin = 1.5f;

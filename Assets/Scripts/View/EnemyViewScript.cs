@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class EnemyViewScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected AudioSource audioSource;
+
+    public void PlayEffect(ParticleSystem effectPrefab, Vector3 targetPoint)
     {
-        
+
+        if (effectPrefab == null || targetPoint == null)
+        {
+            Debug.LogWarning("Effect or targetPoint is null!");
+            return;
+        }
+
+        ParticleSystem effectInstance = Instantiate(effectPrefab,targetPoint,Quaternion.identity);
+
+        effectInstance.Play();
+        Debug.Log("EFFECT PLAYED");
+        Destroy(effectInstance.gameObject, effectInstance.main.duration);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip sound)
     {
-        
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+        }
     }
 }

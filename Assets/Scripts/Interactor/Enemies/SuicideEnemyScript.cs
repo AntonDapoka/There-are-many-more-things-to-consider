@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class SuicideEnemyScript : EnemyScript
 {
@@ -30,6 +29,12 @@ public class SuicideEnemyScript : EnemyScript
     {
         if (other.GetComponentInParent<EnemyKillZoneMarker>() != null)
         {
+            var suicideEnemyPresenter = enemyPresenter as SuicideEnemyPresenterScript;
+            if (suicideEnemyPresenter != null)
+            {
+                suicideEnemyPresenter.PlaySuicideEffect(To2D(agent.nextPosition));
+            }
+            
             Destroy(gameObject);
         }
     }
