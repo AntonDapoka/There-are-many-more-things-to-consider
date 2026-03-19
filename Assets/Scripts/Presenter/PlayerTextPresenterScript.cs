@@ -25,4 +25,9 @@ public class PlayerTextPresenterScript : MonoBehaviour
     {
         playerTextView.OnPhraseCompleted();
     }
+
+    public void ClearText()
+    {
+        playerTextView.ClearText();
+    }
 }

@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44287cbd46527d641a9b68d37d39f154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTextInteractor: {fileID: 1522430529}
+  playerTextInteractor: {fileID: 709165495}
 --- !u!1 &260863177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,14 +1709,14 @@ MonoBehaviour:
 
     Follow me!
 
-    Head north!
+    Move north!
 
-    Head east!
+    Move east!
 
-    Head
+    Move
     west!
 
-    Head south!
+    Move south!
 
     Run!
 
@@ -1917,6 +1917,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &709165493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709165494}
+  - component: {fileID: 709165495}
+  m_Layer: 0
+  m_Name: SoldierTextInteractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &709165494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709165493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1979291131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709165495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709165493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60850fcbc2bf7f04c8e418b17cd35872, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTextPresenter: {fileID: 1408673872}
+  currentTargetPhrase: 
+  currentInput: 
+  matchIndex: 0
+  lastChar: 49
+  textStorage: {fileID: 11400000, guid: 24aa951f467c95a48ac32d3eb584f003, type: 2}
 --- !u!1 &720060769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,12 +3039,12 @@ GameObject:
   - component: {fileID: 1392966893}
   - component: {fileID: 1392966894}
   m_Layer: 0
-  m_Name: TextManager
+  m_Name: OrangeManTextManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1392966893
 Transform:
   m_ObjectHideFlags: 0
@@ -3022,7 +3072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261ca6467a591f54aa3aaa0cfe852f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTextInteractor: {fileID: 1522430529}
+  playerTextInteractor: {fileID: 0}
   textStorages:
   - {fileID: 11400000, guid: cec020308d1bf344eaaa871bb44faced, type: 2}
   - {fileID: 11400000, guid: 1dd6e7b07915331439a05ccb9855836c, type: 2}
@@ -3473,56 +3523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334b10bed39e38b469a1a2d3ef5c6555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1522430527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1522430528}
-  - component: {fileID: 1522430529}
-  m_Layer: 0
-  m_Name: PlayerTextInteractor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1522430528
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522430527}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1979291131}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1522430529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522430527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d2440e0e4ac1143a2e1517731bf311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTextPresenter: {fileID: 1408673872}
-  targetTextManager: {fileID: 1392966894}
-  currentTargetPhrase: 
-  currentInput: 
-  matchIndex: 0
-  lastChar: 92
 --- !u!1 &1524535013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,6 +3622,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6980920250422854679, guid: d37b7712404841b48b32536c3b31a121, type: 3}
   m_PrefabInstance: {fileID: 8637170803463087654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626592671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626592672}
+  - component: {fileID: 1626592673}
+  m_Layer: 0
+  m_Name: OrangeManTextInteractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1626592672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626592671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1979291131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626592673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626592671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621ea7fb57a525b48979d474d9a85016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTextPresenter: {fileID: 1408673872}
+  currentTargetPhrase: 
+  currentInput: 
+  matchIndex: 0
+  lastChar: 684
+  targetTextManager: {fileID: 1392966894}
 --- !u!1 &1657289094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4129,7 +4179,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1184420784}
-  - {fileID: 1522430528}
+  - {fileID: 709165494}
+  - {fileID: 1626592672}
   - {fileID: 1392966893}
   - {fileID: 1026882289}
   m_Father: {fileID: 631785986}

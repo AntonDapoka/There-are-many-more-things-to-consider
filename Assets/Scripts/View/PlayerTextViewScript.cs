@@ -78,6 +78,11 @@ public class PlayerTextViewScript : MonoBehaviour
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
     }
 
+    public void ClearText()
+    {
+        DisplayTargetText("");
+    }
+
     public void OnWrongInput(char wrongInput)
     {
         if (matchIndex <= 0)
