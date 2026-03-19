@@ -10,7 +10,7 @@ public class PlayerTextInteractorScript : MonoBehaviour
     [SerializeField] private TargetTextManagerScript targetTextManager;
 
     [Header("Current Text Data:")]
-    [SerializeField] private string currentTargetPhrase;
+    [SerializeField] private string currentTargetPhrase = "";
     [SerializeField] private string currentInput = "";
     [SerializeField] private int matchIndex = 0; 
     [SerializeField] private char lastChar;
@@ -44,7 +44,11 @@ public class PlayerTextInteractorScript : MonoBehaviour
     public void ProcessSymbol(char newLetter)
     {
         lastChar = newLetter;
-        Debug.Log(lastChar.ToString());
+        
+        if (currentTargetPhrase == "")
+        {
+            return;
+        }
 
         if (matchIndex >= currentTargetPhrase.Length)
             return;
