@@ -1,97 +1,134 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShooterEnemyScript : EnemyScript
 {
     [Header("Combat")]
-    [SerializeField] private float attackDistance = 5f;
-    [SerializeField] private float stoppingDistance = 4f;
-    [SerializeField] private LayerMask obstacleMask;
-    [SerializeField] private float shootCheckRadius = 0.1f;
-    [SerializeField] private float retreatDistance = 2.5f;
+    [SerializeField] protected float attackDistance = 5f;
+    [SerializeField] protected float stoppingDistance = 4f;
+    [SerializeField] protected LayerMask obstacleMask;
+    [SerializeField] protected float shootCheckRadius = 0.1f;
+    [SerializeField] protected float retreatDistance = 2.5f;
 
     protected bool canShoot;
 
-    private void Update()
+    protected void Update()
     {
-    if (!agent.isOnNavMesh) return;
-    if (playerTransform == null) return;
+        if (!agent.isOnNavMesh) return;
+        if (playerTransform == null) return;
 
-    HandleSpeed();
-    HandleWobble();
+        HandleSpeed();
+        HandleWobble();
 
-    Vector2 selfPos = To2D(agent.nextPosition);
-    Vector2 playerPos = To2D(playerTransform.position);
+        Vector2 selfPos = To2D(agent.nextPosition);
+        Vector2 playerPos = playerTransform.position;
 
-    float distance = Vector2.Distance(selfPos, playerPos);
+        float distance = Vector2.Distance(selfPos, playerPos);
+        bool hasLOS = HasLineOfSight();
 
-    if (distance < retreatDistance)
-    {
-        Retreat(selfPos, playerPos);
-        canShoot = false;
-    }
-    else if (distance > stoppingDistance)
-    {
-        Move(playerPos);
-        canShoot = false;
-    }
-    else
-    {
-        Stop();
-        canShoot = HasLineOfSight();
-    }
-        Vector3 navPos = agent.nextPosition;
-        transform.position = To2D(navPos);
+        canShoot = hasLOS && distance <= attackDistance;
+
+        if (distance < retreatDistance) Retreat(selfPos, playerPos);
+        else if (!hasLOS) SeekLineOfSight(playerPos);
+        else if (distance > attackDistance) Move(playerPos);
+        else Stop();
+
+        transform.position = To2D(agent.nextPosition);
     }
 
-    private void Move(Vector2 playerPos)
+    protected void SeekLineOfSight(Vector2 playerPos)
+    {
+        Vector2 selfPos = To2D(agent.nextPosition);
+
+        float desiredDistance = Mathf.Clamp(Vector2.Distance(selfPos, playerPos),retreatDistance,attackDistance);
+
+        int samples = 8;
+        float angleStep = 360f / samples;
+
+        Vector2 bestPoint = playerPos;
+        bool found = false;
+
+        for (int i = 0; i < samples; i++)
+        {
+            float angle = angleStep * i * Mathf.Deg2Rad;
+
+            Vector2 dir = new(Mathf.Cos(angle), Mathf.Sin(angle));
+            Vector2 candidate = playerPos + dir * desiredDistance;
+
+            if (NavMesh.SamplePosition(ToNavMesh(candidate), out NavMeshHit navHit, 1.5f, NavMesh.AllAreas))
+            {
+                if (HasLineOfSightFrom(candidate, playerPos))
+                {
+                    bestPoint = To2D(navHit.position);
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(ToNavMesh(bestPoint));
+        }
+        else
+        {
+            Move(playerPos);
+        }
+    }
+
+    protected bool HasLineOfSightFrom(Vector2 origin2D, Vector2 target2D)
+    {
+        Vector2 dir = (target2D - origin2D).normalized;
+        float dist = Vector2.Distance(origin2D, target2D);
+
+        RaycastHit2D hit = Physics2D.CircleCast(origin2D, shootCheckRadius, dir, dist, obstacleMask);
+
+        if (hit.collider != null && hit.transform != playerTransform)
+            return false;
+
+        return true;
+    }
+
+    protected void Move(Vector2 playerPos)
     {
         Vector2 target2D = playerPos + wobbleOffset;
         agent.isStopped = false;
         agent.SetDestination(ToNavMesh(target2D));
     }
 
-    private void Stop()
+    protected void Stop()
     {
         agent.isStopped = true;
     }
 
-    private void Retreat(Vector2 selfPos, Vector2 playerPos)
+    protected void Retreat(Vector2 selfPos, Vector2 playerPos)
     {
-        // направление ОТ игрока
         Vector2 dir = (selfPos - playerPos).normalized;
-
-        // точка отступления
         Vector2 target = selfPos + dir * (stoppingDistance + 1f);
-
-        // немного "жизни"
         target += wobbleOffset;
 
         agent.isStopped = false;
         agent.SetDestination(ToNavMesh(target));
     }
 
-    private void ApplyAgentPosition()
+    protected bool HasLineOfSight()
     {
-        Vector3 navPos = agent.nextPosition;
+        Vector2 origin2D = To2D(agent.nextPosition);
+        Vector2 target2D = playerTransform.position;
 
-        Vector2 pos2D = To2D(navPos);
-        transform.position = new Vector3(pos2D.x, transform.position.y, pos2D.y);
-    }
+        Vector2 dir = (target2D - origin2D).normalized;
+        float dist = Vector2.Distance(origin2D, target2D);
 
-    private bool HasLineOfSight()
-    {
-        Vector3 origin = transform.position;
-        Vector3 target = playerTransform.position;
+        RaycastHit2D hit = Physics2D.CircleCast(origin2D, shootCheckRadius, dir, dist, obstacleMask);
 
-        Vector3 dir = (target - origin).normalized;
-        float dist = Vector3.Distance(origin, target);
+        if (hit.collider != null && hit.transform != playerTransform)
+            return false;
 
-        if (Physics.SphereCast(origin, shootCheckRadius, dir, out RaycastHit hit, dist, obstacleMask))
-        {
-            if (hit.transform != playerTransform)
-                return false;
-        }
+        Vector3 origin3D = new(origin2D.x, origin2D.y, 0f);
+        Vector3 target3D = new(target2D.x, target2D.y, 0f);
+        Debug.DrawLine(origin3D, target3D, Color.red);
 
         return true;
     }
