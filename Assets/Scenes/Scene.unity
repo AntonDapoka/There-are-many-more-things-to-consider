@@ -1705,7 +1705,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'MOVEMENT COMMANDS
 
-    
+
 
     Follow me!
 
@@ -1860,7 +1860,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.24, y: 1.24, z: 1.24}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1522288778}
@@ -2226,6 +2226,7 @@ GameObject:
   - component: {fileID: 943615938}
   - component: {fileID: 943615937}
   - component: {fileID: 943615936}
+  - component: {fileID: 943615939}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2307,6 +2308,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1834442902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943615939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943615935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 32
+  m_RefResolutionX: 640
+  m_RefResolutionY: 360
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 1
 --- !u!1 &949485667
 GameObject:
   m_ObjectHideFlags: 0
