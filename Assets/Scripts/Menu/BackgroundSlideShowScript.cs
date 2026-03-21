@@ -1,18 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackgroundSlideShowScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Sprite[] backgroundSprites;
+    [SerializeField] private Image bakgroundImage; 
+    [SerializeField] private float interval = 5f;
+
+    private int lastIndex = -1;
+    private int secondLastIndex = -1;
+
+    private void Start()
     {
+        if (bakgroundImage == null || backgroundSprites.Length == 0)
+            return;
         
+        StartCoroutine(ChangeImageRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ChangeImageRoutine()
     {
-        
+        while (true)
+        {
+            yield return new WaitForSeconds(interval);
+
+            int newIndex;
+            do
+            {
+                newIndex = Random.Range(0, backgroundSprites.Length);
+            }
+            while (backgroundSprites.Length > 2 &&  (newIndex == lastIndex || newIndex == secondLastIndex));
+
+            secondLastIndex = lastIndex;
+            lastIndex = newIndex;
+            bakgroundImage.sprite = backgroundSprites[newIndex];
+        }
     }
 }
