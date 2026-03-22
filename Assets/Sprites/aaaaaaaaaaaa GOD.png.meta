@@ -1,0 +1,3101 @@
+fileFormatVersion: 2
+guid: 92930beb42e1114479c3392b999b2bda
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1686
+        width: 640
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bd9bcadec67334d93873ca06fe5754
+      internalID: -1073826578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_1
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1965
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1025875ab98c342b1c852f6ac17634
+      internalID: 965649046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_2
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1965
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246a4568064566f42b83530c788a5c64
+      internalID: 2012281031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_3
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1965
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c826936c5b1b34881f3f6197365e20
+      internalID: -1961548022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_4
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1965
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53910a5fdb0a58647b7a88a7e7927593
+      internalID: -1673750191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_5
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 2002
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f323f80e143c9448df41dd436124b7
+      internalID: -433164210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_6
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 2002
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264776140b6569041ace564f001c080b
+      internalID: -91961977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_7
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 2002
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50531ca0be36f745b8bb0b0182ef108
+      internalID: 1453049092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_8
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 2002
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75055979c1d0be342bca839721481ceb
+      internalID: -2131923721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_9
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 2002
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ab049a214b1814d8548f20b647f60b
+      internalID: 1511985488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_10
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 2002
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9747ff30ae02dea4db89dc1ae48d2ab3
+      internalID: 1391413608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_11
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 2002
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f0f22abc098ee489a419ab09546129
+      internalID: 2121090421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_12
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 2002
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b49d1b800f75948b5a50707bae374e
+      internalID: -736755759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_13
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 2002
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fa3c5fb66d3854aa5031268b88ad0d
+      internalID: -438340253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_14
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 2002
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea38d00376507394ea21c670ce5324d3
+      internalID: -331385381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_15
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 2002
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a68f55bf98fbe04982333cdb48ae90e
+      internalID: 783034092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_16
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 2002
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430ad5c224a968049ba924cf4dfc7093
+      internalID: -1849589633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_17
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 2039
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9198a3bdcb7415549ae6c21b4e3c823a
+      internalID: -1162328968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_18
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1880
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e931e0dc7f1d6247bfde6d6ea98fda7
+      internalID: -939964071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_19
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1880
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2fb2ea433f7f346be9d8f4c3abba95
+      internalID: 1722442929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_20
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1880
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0da90b1e8eff6d4d9a5e233699fd0cb
+      internalID: 1953268082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_21
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1880
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ec79b292566c54491ffd82908240e3
+      internalID: -1912449231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_22
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1957
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68521fdc7ec8df34d86e538d8172c73e
+      internalID: 535415072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_23
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1957
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a535f056fce3445b0e5466ee96ac43
+      internalID: 664492323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_24
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1957
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a632b64e6634fa49ab5394a0a6ed165
+      internalID: 464980418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_25
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1957
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47225d4b28415a341aa39333435db933
+      internalID: 1110792183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_26
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1957
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f05996d343ad344940915b081fd9cf
+      internalID: -2081112239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_27
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1957
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f8a943aec840149a5eabde523d837d
+      internalID: 2044880691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_28
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 1957
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1cadd6293800f41b2af7fc609b71f7
+      internalID: -228964699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_29
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1957
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a393aef2e839a49ac2551874331c19
+      internalID: 1666226332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_30
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 1957
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d84e6945f583f740a027f1f0d68ecd4
+      internalID: 1037681854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_31
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1957
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18dae537717ede44eb530d5abf15bd55
+      internalID: -1545128697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_32
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1957
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d9e15a41cbbc743974dbd9809020a0
+      internalID: 835745432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_33
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1957
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ecb759c22cbb445a134a785596f03e
+      internalID: 1647565549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_34
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 1912
+        width: 13
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2531a09e125a5df4289cb1f4ae7cc355
+      internalID: -969170877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_35
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1912
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4562f055924643a419603b0628a7276e
+      internalID: 977690682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_36
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 1912
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f59876b9c36431439a521867e77a709
+      internalID: 2084450500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_37
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1912
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4aeb7671ee11d4aa6aba4b9a2927e5
+      internalID: -1652957978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_38
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 1912
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b127df4830dae847b93d07adb3a4a6d
+      internalID: -480171427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_39
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1912
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588534adeacd1514fa5273baf7e1a131
+      internalID: 1789026787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_40
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 1912
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be862655fa20ced49833313eff361a6a
+      internalID: 450614986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_41
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1912
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e6cf88ac641c84c8fc1d2edf9339ba
+      internalID: 1855038308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_42
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1912
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6006786a8596eb74199936297a3a9b57
+      internalID: 1105592164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_43
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1912
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4167b6054c1b61941bb2580f9db378b4
+      internalID: -484368668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_44
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 1912
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a69dc3f7426e8479a4c009c56844df
+      internalID: -2060676714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_45
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1912
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603e3a608875edc45a7563e28d96fd4e
+      internalID: 1405003767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_46
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1842
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70297d7c70322f240a85c2e106bf5576
+      internalID: 2013588092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_47
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1842
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b7b4319b7f70149911928b8640f525
+      internalID: 530211904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_48
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1842
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de250d4161314e48a0e90c7ff94156e
+      internalID: -1810636220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_49
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1810
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e16c816af7fb2240856bc26427f783a
+      internalID: -1937885232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_50
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1810
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114a589142305e044a11d8fdcfa427d8
+      internalID: -2022041487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_51
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1810
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555bc260c17d9224dbab4c69b7781cbc
+      internalID: -2019627201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_52
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1867
+        width: 23
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e0c5d2daaf07494c826b4b124cbcce3
+      internalID: 1976284092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_53
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1868
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb553eabaa75d647a7fbdee5d723eaf
+      internalID: 121608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_54
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1867
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa52ebd4a45431a49a5140b4033ae9fc
+      internalID: 217799996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_55
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1868
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deead90ce792cb5488a0f86c7b7f49ff
+      internalID: -1471578224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_56
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1867
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ac38fffa0014148be148c9cf6852d6
+      internalID: 451755432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_57
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 1867
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbfc57dd54053446ae0cc3c9fe98b5e
+      internalID: 351586497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_58
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1867
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9635c85430d6eac45a02a1badb61212f
+      internalID: -1306929406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_59
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1868
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cdbd37308319cf40a70a1e29dbc8468
+      internalID: -680641721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_60
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1867
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f5f50e98d15204abe92e23b510f31c
+      internalID: 1249116691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_61
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1868
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede4251d63da63d42af275ceac6232d6
+      internalID: -1656071136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_62
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1867
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a243d82386c4fc64aa052ee079401c99
+      internalID: -1510143777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_63
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1867
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f31e6f3073e8743ac6a7a7f958a0ac
+      internalID: 1140396226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_64
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1808
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3623300f0d117488bff3717c5ab254
+      internalID: -1757333409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_65
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1808
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4811cb7011c0474abd94296aa1fd75c
+      internalID: -1024795526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_66
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1808
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfebeff73f481cc408aedfc3d28edd82
+      internalID: -1995362815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_67
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1820
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808b34b64ccf1674ebab4c16a69f10d9
+      internalID: 334422640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_68
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1820
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d825d75f1063747bdf9606380368fe
+      internalID: 592257984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_69
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1820
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56caca5d1fad5448a8900cdef098805
+      internalID: 272227345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_70
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 1820
+        width: 21
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0b04d5353f8a544b03a26cb40a130d
+      internalID: -101821642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_71
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1820
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f295b55cf392b04aab54f8895d95303
+      internalID: 1388615935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_72
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1820
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd52268919e45445bb164015e05ffc3
+      internalID: 364017602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_73
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1776
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adabda1a87591e7439abbbf8eee3b269
+      internalID: 1475316307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_74
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1776
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76721292222a0ca4e8b75864ef56a236
+      internalID: -1673001679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_75
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1776
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebbc0b0cef31f445bf2c306f92698a0
+      internalID: -913118503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_76
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1744
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: addfda59139be3241bc46b77cbe80f28
+      internalID: -1785825342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_77
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1744
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97481c5193f72844ae966e9c18d996c
+      internalID: 1230117627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_78
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1744
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9573d4f3c3158c542bf120eb6227b285
+      internalID: 335066701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_79
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1775
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c56e8d465f85b4f96ad6b2f51c759b
+      internalID: 2021456381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_80
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1775
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9faf0918997d94683792e1b7d2a453
+      internalID: 393820883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_81
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1775
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ad71ab3fffdf54195511b77f69e01b
+      internalID: 1481050624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_82
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 1775
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76f4ef5c5dc2bc459bd481d227f2f81
+      internalID: 1213728584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_83
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1775
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d5f6e1f57923947bd0163882f5ccbf
+      internalID: -864793461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_84
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 1775
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d22d1ec95ed6f4889b5300bb2018be
+      internalID: -22046460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_85
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1740
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85114f7f2d822cd458eec6e02130a34d
+      internalID: -1884896919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_86
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1740
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1579589af2d13174f816b04ede63a521
+      internalID: 619386028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_87
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1740
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18c31d91cdbc27469e26496c19db5da
+      internalID: 1673827788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_88
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1710
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417d39c52324a1f4a943e73793596f5d
+      internalID: 753020909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_89
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1730
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287b95584ff285f4ea7c5902fe937000
+      internalID: -422324937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_90
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1730
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e121be78b2faede42bebe26d92acd2c5
+      internalID: 1311150102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_91
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1730
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e414b05cbf3c4574db205923796e4c7a
+      internalID: -1513446637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_92
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1730
+        width: 14
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e60f17f9fb154489787624fb35b040
+      internalID: 1311691448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_93
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1730
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57eae9810b81a6d4fa4aa003e867bfd4
+      internalID: 1768250100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_94
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 1730
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90dcf167f886f24faa75582727d6e8a
+      internalID: 112000849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_95
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1706
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1057dd8b2c63c094e993df4a3606efe1
+      internalID: 1856894874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_96
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1706
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967ddbe6703bf684b92576f2e1244914
+      internalID: 1869837027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_97
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1706
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a610484b29d4a4b9395b52f8d4cd79
+      internalID: 66017116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_98
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1676
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd91fab389c85b44a3ccc3ad665c79a
+      internalID: 385610047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_99
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1692
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de81eabb41f2fe4390abe1f486a006e
+      internalID: 1194973844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_100
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1685
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85912641186bf894b93a2bb9522d2b45
+      internalID: -467799421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_101
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1686
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4e325dabb288949a04f25526d960f4
+      internalID: 507819819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_102
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 1685
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3586bf7146ce3489f4cbcd494bb483
+      internalID: -1364471330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_103
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1686
+        width: 21
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca5192b31aa20e4e8e393833ac9014a
+      internalID: -417686766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_104
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1685
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c832c66e6a2c35f42acd23bb8bccf148
+      internalID: -402056152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_105
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1685
+        width: 19
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c823955847b1742854f6c5f024465d
+      internalID: 2051577088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_106
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1675
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98aa38237883bf447ae239123339854f
+      internalID: 48940474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_107
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1675
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d87e97b7a560ce4c9a3e9e3128eda40
+      internalID: -1259582409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_108
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1675
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ff4cd34cf303040a04591313c8827f
+      internalID: -1168182700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_109
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1694
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ab435634295444aae87d56bb05f193
+      internalID: -1136853713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_110
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1424
+        width: 154
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71208fbc54ba7374781875d0e6588ddc
+      internalID: 289575859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_111
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1424
+        width: 150
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dea37026e0063348a06646d5690a613
+      internalID: -1544069503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_112
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1424
+        width: 171
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d416838deff62d3479416323a455c20d
+      internalID: 435714502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_113
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1424
+        width: 171
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2de6933a1b186042a7f594a18b67064
+      internalID: 1652169395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_114
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1426
+        width: 147
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782fffba67046464182c48373aa3f07e
+      internalID: 2032461579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_115
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1426
+        width: 147
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82ca4a4b2753ff499b693d9cb0174ca
+      internalID: 1905207585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_116
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1493
+        width: 134
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3212d3d22ed27824eabc738dd15459b5
+      internalID: 793175454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_117
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1561
+        width: 144
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98720cbc763f8c94db9f3a34f1e70e30
+      internalID: 1971139316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_118
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1316
+        width: 189
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678dd284d49a3334bad68bddc93d322b
+      internalID: -114424432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_119
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1316
+        width: 182
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47531fca5b044354eacecc297f5d6c7f
+      internalID: 1948073440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_120
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1045
+        width: 85
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f498cd5fddbedca40aed7032db8174c3
+      internalID: 1421174163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_121
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1328
+        width: 111
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda1eff0f73260b47ab5795cb78aa8a8
+      internalID: -909879584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_122
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1341
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d4841480dbae543a2624fbbd204854
+      internalID: 1097786142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_123
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1328
+        width: 95
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48ef2a49da5e6f459052b51db35813d
+      internalID: 1368412774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_124
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1047
+        width: 400
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2da5ff6f8f65cd4681e7ffd8a014dfc
+      internalID: 690189504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_125
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1236
+        width: 189
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8148adb08703a4fbb757cd721262c9
+      internalID: -1008167205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_126
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1236
+        width: 190
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ea48aefee2748449137e901ab97556
+      internalID: 669181353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_127
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1160
+        width: 169
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9930ac696a763d4ea945e3a56f1a601
+      internalID: -663583540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_128
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 1163
+        width: 39
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ccd2bf116c78c4d911c34bf9be0450
+      internalID: -50002912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_129
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1160
+        width: 169
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f986647c82022cf4296e7bf4a1479994
+      internalID: -1321074157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_130
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1133
+        width: 182
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3447ac1ce79e846bb4e9b7e7891d31
+      internalID: 630153650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_131
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1133
+        width: 182
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31ee4a47a2f8a74a83ec73b6d20d306
+      internalID: -912263908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_132
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 1159
+        width: 31
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ef6edc201183c45879b456a8cd5f74
+      internalID: 1257571908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaaaaaaaaa GOD_133
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1159
+        width: 31
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8022ab3af3ff1cc4ca14119c38155e8f
+      internalID: -1429782120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 43286f6ab6e9c094da0102b06b1c7fb4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      aaaaaaaaaaaa GOD_0: -1073826578
+      aaaaaaaaaaaa GOD_1: 965649046
+      aaaaaaaaaaaa GOD_10: 1391413608
+      aaaaaaaaaaaa GOD_100: -467799421
+      aaaaaaaaaaaa GOD_101: 507819819
+      aaaaaaaaaaaa GOD_102: -1364471330
+      aaaaaaaaaaaa GOD_103: -417686766
+      aaaaaaaaaaaa GOD_104: -402056152
+      aaaaaaaaaaaa GOD_105: 2051577088
+      aaaaaaaaaaaa GOD_106: 48940474
+      aaaaaaaaaaaa GOD_107: -1259582409
+      aaaaaaaaaaaa GOD_108: -1168182700
+      aaaaaaaaaaaa GOD_109: -1136853713
+      aaaaaaaaaaaa GOD_11: 2121090421
+      aaaaaaaaaaaa GOD_110: 289575859
+      aaaaaaaaaaaa GOD_111: -1544069503
+      aaaaaaaaaaaa GOD_112: 435714502
+      aaaaaaaaaaaa GOD_113: 1652169395
+      aaaaaaaaaaaa GOD_114: 2032461579
+      aaaaaaaaaaaa GOD_115: 1905207585
+      aaaaaaaaaaaa GOD_116: 793175454
+      aaaaaaaaaaaa GOD_117: 1971139316
+      aaaaaaaaaaaa GOD_118: -114424432
+      aaaaaaaaaaaa GOD_119: 1948073440
+      aaaaaaaaaaaa GOD_12: -736755759
+      aaaaaaaaaaaa GOD_120: 1421174163
+      aaaaaaaaaaaa GOD_121: -909879584
+      aaaaaaaaaaaa GOD_122: 1097786142
+      aaaaaaaaaaaa GOD_123: 1368412774
+      aaaaaaaaaaaa GOD_124: 690189504
+      aaaaaaaaaaaa GOD_125: -1008167205
+      aaaaaaaaaaaa GOD_126: 669181353
+      aaaaaaaaaaaa GOD_127: -663583540
+      aaaaaaaaaaaa GOD_128: -50002912
+      aaaaaaaaaaaa GOD_129: -1321074157
+      aaaaaaaaaaaa GOD_13: -438340253
+      aaaaaaaaaaaa GOD_130: 630153650
+      aaaaaaaaaaaa GOD_131: -912263908
+      aaaaaaaaaaaa GOD_132: 1257571908
+      aaaaaaaaaaaa GOD_133: -1429782120
+      aaaaaaaaaaaa GOD_14: -331385381
+      aaaaaaaaaaaa GOD_15: 783034092
+      aaaaaaaaaaaa GOD_16: -1849589633
+      aaaaaaaaaaaa GOD_17: -1162328968
+      aaaaaaaaaaaa GOD_18: -939964071
+      aaaaaaaaaaaa GOD_19: 1722442929
+      aaaaaaaaaaaa GOD_2: 2012281031
+      aaaaaaaaaaaa GOD_20: 1953268082
+      aaaaaaaaaaaa GOD_21: -1912449231
+      aaaaaaaaaaaa GOD_22: 535415072
+      aaaaaaaaaaaa GOD_23: 664492323
+      aaaaaaaaaaaa GOD_24: 464980418
+      aaaaaaaaaaaa GOD_25: 1110792183
+      aaaaaaaaaaaa GOD_26: -2081112239
+      aaaaaaaaaaaa GOD_27: 2044880691
+      aaaaaaaaaaaa GOD_28: -228964699
+      aaaaaaaaaaaa GOD_29: 1666226332
+      aaaaaaaaaaaa GOD_3: -1961548022
+      aaaaaaaaaaaa GOD_30: 1037681854
+      aaaaaaaaaaaa GOD_31: -1545128697
+      aaaaaaaaaaaa GOD_32: 835745432
+      aaaaaaaaaaaa GOD_33: 1647565549
+      aaaaaaaaaaaa GOD_34: -969170877
+      aaaaaaaaaaaa GOD_35: 977690682
+      aaaaaaaaaaaa GOD_36: 2084450500
+      aaaaaaaaaaaa GOD_37: -1652957978
+      aaaaaaaaaaaa GOD_38: -480171427
+      aaaaaaaaaaaa GOD_39: 1789026787
+      aaaaaaaaaaaa GOD_4: -1673750191
+      aaaaaaaaaaaa GOD_40: 450614986
+      aaaaaaaaaaaa GOD_41: 1855038308
+      aaaaaaaaaaaa GOD_42: 1105592164
+      aaaaaaaaaaaa GOD_43: -484368668
+      aaaaaaaaaaaa GOD_44: -2060676714
+      aaaaaaaaaaaa GOD_45: 1405003767
+      aaaaaaaaaaaa GOD_46: 2013588092
+      aaaaaaaaaaaa GOD_47: 530211904
+      aaaaaaaaaaaa GOD_48: -1810636220
+      aaaaaaaaaaaa GOD_49: -1937885232
+      aaaaaaaaaaaa GOD_5: -433164210
+      aaaaaaaaaaaa GOD_50: -2022041487
+      aaaaaaaaaaaa GOD_51: -2019627201
+      aaaaaaaaaaaa GOD_52: 1976284092
+      aaaaaaaaaaaa GOD_53: 121608
+      aaaaaaaaaaaa GOD_54: 217799996
+      aaaaaaaaaaaa GOD_55: -1471578224
+      aaaaaaaaaaaa GOD_56: 451755432
+      aaaaaaaaaaaa GOD_57: 351586497
+      aaaaaaaaaaaa GOD_58: -1306929406
+      aaaaaaaaaaaa GOD_59: -680641721
+      aaaaaaaaaaaa GOD_6: -91961977
+      aaaaaaaaaaaa GOD_60: 1249116691
+      aaaaaaaaaaaa GOD_61: -1656071136
+      aaaaaaaaaaaa GOD_62: -1510143777
+      aaaaaaaaaaaa GOD_63: 1140396226
+      aaaaaaaaaaaa GOD_64: -1757333409
+      aaaaaaaaaaaa GOD_65: -1024795526
+      aaaaaaaaaaaa GOD_66: -1995362815
+      aaaaaaaaaaaa GOD_67: 334422640
+      aaaaaaaaaaaa GOD_68: 592257984
+      aaaaaaaaaaaa GOD_69: 272227345
+      aaaaaaaaaaaa GOD_7: 1453049092
+      aaaaaaaaaaaa GOD_70: -101821642
+      aaaaaaaaaaaa GOD_71: 1388615935
+      aaaaaaaaaaaa GOD_72: 364017602
+      aaaaaaaaaaaa GOD_73: 1475316307
+      aaaaaaaaaaaa GOD_74: -1673001679
+      aaaaaaaaaaaa GOD_75: -913118503
+      aaaaaaaaaaaa GOD_76: -1785825342
+      aaaaaaaaaaaa GOD_77: 1230117627
+      aaaaaaaaaaaa GOD_78: 335066701
+      aaaaaaaaaaaa GOD_79: 2021456381
+      aaaaaaaaaaaa GOD_8: -2131923721
+      aaaaaaaaaaaa GOD_80: 393820883
+      aaaaaaaaaaaa GOD_81: 1481050624
+      aaaaaaaaaaaa GOD_82: 1213728584
+      aaaaaaaaaaaa GOD_83: -864793461
+      aaaaaaaaaaaa GOD_84: -22046460
+      aaaaaaaaaaaa GOD_85: -1884896919
+      aaaaaaaaaaaa GOD_86: 619386028
+      aaaaaaaaaaaa GOD_87: 1673827788
+      aaaaaaaaaaaa GOD_88: 753020909
+      aaaaaaaaaaaa GOD_89: -422324937
+      aaaaaaaaaaaa GOD_9: 1511985488
+      aaaaaaaaaaaa GOD_90: 1311150102
+      aaaaaaaaaaaa GOD_91: -1513446637
+      aaaaaaaaaaaa GOD_92: 1311691448
+      aaaaaaaaaaaa GOD_93: 1768250100
+      aaaaaaaaaaaa GOD_94: 112000849
+      aaaaaaaaaaaa GOD_95: 1856894874
+      aaaaaaaaaaaa GOD_96: 1869837027
+      aaaaaaaaaaaa GOD_97: 66017116
+      aaaaaaaaaaaa GOD_98: 385610047
+      aaaaaaaaaaaa GOD_99: 1194973844
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,11 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class SoldierScript : NPCScript
 {
-    [SerializeField] private Transform playerTransform;
-
     public enum Command
     {
         None,
@@ -17,12 +14,17 @@ public class SoldierScript : NPCScript
         Halt
     }
 
+    [Header("References")]
+    [Tooltip("Optional. If null, uses GetNearestPlayer() from playerTargets.")]
+    [SerializeField] private Transform playerTransform;
+
     [Header("Follow")]
     [SerializeField] private float followDistance = 2.5f;
 
     [Header("Movement")]
     [SerializeField] private float baseSpeed = 3.5f;
     [SerializeField] private float runMultiplier = 1.8f;
+    [SerializeField] private float moveDistance = 10f;
 
     protected Command currentCommand = Command.None;
     protected bool isRunning = false;
@@ -61,7 +63,7 @@ public class SoldierScript : NPCScript
 
     public void SetCommand(string command)
     {
-         switch (command)
+        switch (command)
         {
             case "FOLLOWME":
                 currentCommand = Command.Follow;
@@ -83,7 +85,7 @@ public class SoldierScript : NPCScript
                 Stop();
                 break;
             case "RUN":
-                SetRun(true); 
+                SetRun(true);
                 return;
         }
         Debug.Log(currentCommand.ToString());
@@ -96,10 +98,11 @@ public class SoldierScript : NPCScript
 
     protected void FollowPlayer()
     {
-        if (playerTransform == null) return;
+        Transform targetPlayer = playerTransform;
+        if (targetPlayer == null) return;
 
         Vector2 selfPos = To2D(agent3D.nextPosition);
-        Vector2 playerPos = playerTransform.position;
+        Vector2 playerPos = targetPlayer.position;
 
         float distance = Vector2.Distance(selfPos, playerPos);
 
@@ -109,21 +112,30 @@ public class SoldierScript : NPCScript
             return;
         }
 
-        Vector2 target = playerPos + wobbleOffset;
-
-        agent3D.isStopped = false;
-        agent3D.SetDestination(ToNavMesh(target));
+        Vector2 target2D = playerPos + wobbleOffset;
+        SetDestinationOnNavMesh(target2D);
     }
 
     protected void Move(Vector2 direction)
     {
         Vector2 selfPos = To2D(agent3D.nextPosition);
-        Vector2 target = selfPos + direction.normalized * 10f;
+        Vector2 target2D = selfPos + direction.normalized * moveDistance;
+        target2D += wobbleOffset;
 
-        target += wobbleOffset;
-
-        agent3D.isStopped = false;
-        agent3D.SetDestination(ToNavMesh(target));
+        SetDestinationOnNavMesh(target2D);
+    }
+    protected void SetDestinationOnNavMesh(Vector2 target2D)
+    {
+        if (NavMesh.SamplePosition(ToNavMesh(target2D), out NavMeshHit navHit, 2f, NavMesh.AllAreas))
+        {
+            agent3D.isStopped = false;
+            agent3D.SetDestination(navHit.position);
+        }
+        else
+        {
+            agent3D.isStopped = false;
+            agent3D.SetDestination(ToNavMesh(target2D));
+        }
     }
 
     protected void Stop()
