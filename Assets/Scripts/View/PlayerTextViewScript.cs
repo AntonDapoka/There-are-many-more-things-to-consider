@@ -5,13 +5,13 @@ using System.Collections;
 
 public class PlayerTextViewScript : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private TextMeshProUGUI outlineText;
+    [SerializeField] protected TextMeshProUGUI text;
+    [SerializeField] protected TextMeshProUGUI outlineText;
 
     [Header("Outline")]
     [SerializeField] private float outlineWidth = 1.5f;
 
-    private TMP_TextInfo textInfo;
+    protected TMP_TextInfo textInfo;
 
       string inputCache = "";
     private List<string> candidates = new();
@@ -19,9 +19,9 @@ public class PlayerTextViewScript : MonoBehaviour
 
     private Coroutine candidateRoutine;
 
-    private int matchIndex = 0;
+    protected int matchIndex = 0;
 
-    public void DisplayTargetText(string value)
+    public virtual void DisplayTargetText(string value)
     {
         inputCache = "";
         matchIndex = 0;
@@ -50,7 +50,7 @@ public class PlayerTextViewScript : MonoBehaviour
         textInfo = text.textInfo;
     }
 
-    public void UpdateMatched(char c)
+    public virtual void UpdateMatched(char c)
     {
         if (textInfo == null || textInfo.characterCount == 0)
             return;
@@ -112,11 +112,6 @@ public class PlayerTextViewScript : MonoBehaviour
             StopCoroutine(candidateRoutine);
             candidateRoutine = null;
         }
-    }
-
-    public void OnPhraseCompleted()
-    {
-        // 
     }
 
     public void ClearText()

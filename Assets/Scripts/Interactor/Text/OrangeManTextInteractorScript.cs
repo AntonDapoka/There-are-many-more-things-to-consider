@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OrangeManTextInteractorScript : PlayerTextInteractorScript
 {
-
+    [Header("Target Text Manager")]
     [SerializeField] protected TargetTextManagerScript targetTextManager;
 
-   public override void ProcessSymbol(char newLetter)
-   {
-        lastChar = newLetter;
+    public override void ProcessSymbol(char newLetter)
+    {
+        newLetter = char.ToUpper(newLetter);
 
-        if (currentTargetPhrase == "")
-        {
+        if (string.IsNullOrEmpty(currentTargetPhrase))
             return;
-        }
 
         if (matchIndex >= currentTargetPhrase.Length)
             return;
@@ -23,28 +19,29 @@ public class OrangeManTextInteractorScript : PlayerTextInteractorScript
         {
             matchIndex++;
             currentInput += newLetter;
+            lastChar = newLetter;
 
             playerTextPresenter.UpdateMatched(newLetter);
 
             if (matchIndex >= currentTargetPhrase.Length)
-            {
                 OnPhraseCompleted();
-            }
         }
         else
         {
-            if (matchIndex > 0) matchIndex--;
-
             OnWrongInput(newLetter);
+
+            if (matchIndex > 0 && currentInput.Length > 0)
+            {
+                matchIndex--;
+                currentInput = currentInput.Substring(0, currentInput.Length - 1);
+                playerTextPresenter.RebuildMatched(currentInput);
+            }
         }
-   }
+    }
 
     protected override void OnPhraseCompleted()
     {
-        Debug.Log("Phrase completed!");
-
         playerTextPresenter.OnPhraseCompleted();
         targetTextManager.OnThePhraseEnd();
-
     }
 }

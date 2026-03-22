@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerTextControllerScript : InputHandlerScript
 {
-    [SerializeField] private PlayerTextInteractorScript playerTextInteractor;
+    [SerializeField] private PlayerTextInteractorScript[] playerTextInteractors;
 
     public override void HandleInput(KeyCode key, bool isPressed)
     {
@@ -15,7 +15,14 @@ public class PlayerTextControllerScript : InputHandlerScript
         if (key >= KeyCode.A && key <= KeyCode.Z)
         {
             char letter = (char)('a' + (key - KeyCode.A));
-            playerTextInteractor.ProcessSymbol(char.ToUpper(letter));
+            foreach (PlayerTextInteractorScript interactor in playerTextInteractors)
+            {
+                if (interactor != null)
+                {
+                    interactor.ProcessSymbol(char.ToUpper(letter));
+                }
+            }
+            
         }
     }
 }

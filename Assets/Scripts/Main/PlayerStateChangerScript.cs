@@ -11,9 +11,17 @@ public class PlayerStateChangerScript : MonoBehaviour
     [SerializeField] private GameObject player;
     private Transform playerTransform;
 
+    [SerializeField] private OrangeManTextInteractorScript orangeManTextInteractor;
+    [SerializeField] private TargetTextManagerScript orangeManTextManager;
+    [SerializeField] private SoldierTextInteractorScript soldieranTextInteractor;
+
     [Header("Environments")]
     [SerializeField] private GameObject environmentOffice;
     [SerializeField] private GameObject environmentBattlefield;
+
+    [Header("UIs")]
+    [SerializeField] private Canvas uiOffice;
+    [SerializeField] private Canvas uiBattlefield;
 
     [Header("Prefabs Soldiers")]
     [SerializeField] private GameObject soldierBlinky;
@@ -31,19 +39,27 @@ public class PlayerStateChangerScript : MonoBehaviour
    private void Awake()
    {
         playerTransform = player.GetComponent<Transform>();
+        SetOrangeManState();
    }
 
    public void SetOrangeManState()
     {
         environmentBattlefield.SetActive(false);
         environmentOffice.SetActive(true);
-
+/*
         soldierBlinky.SetActive(false);
         soldierPinky.SetActive(false);
         soldierInky.SetActive(false);
-        soldierClaude.SetActive(false);
+        soldierClaude.SetActive(false);*/
 
-        playerTransform.position = Vector3.zero;
+        uiOffice.gameObject.SetActive(true);
+        uiBattlefield.gameObject.SetActive(false);
+
+        orangeManTextInteractor.gameObject.SetActive(true);
+        orangeManTextManager.gameObject.SetActive(true);
+        soldieranTextInteractor.gameObject.SetActive(false);
+
+        //playerTransform.position = Vector3.zero;
 
     }
 

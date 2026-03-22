@@ -145,4 +145,18 @@ public class EnemyManagerScript : MonoBehaviour
                 spawnedEnemies.RemoveAt(i);
         }
     }
+
+    /// <summary>
+    /// Returns transforms of all alive enemies. Used by soldiers for FIRE command.
+    /// </summary>
+    public IReadOnlyList<Transform> GetAliveEnemies()
+    {
+        var list = new List<Transform>();
+        foreach (var go in spawnedEnemies)
+        {
+            if (go != null)
+                list.Add(go.transform);
+        }
+        return list;
+    }
 }

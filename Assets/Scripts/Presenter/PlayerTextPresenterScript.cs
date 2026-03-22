@@ -14,6 +14,7 @@ public class PlayerTextPresenterScript : MonoBehaviour
     public void OnWrongInput(char wrongInput)
     {
         playerTextView.OnWrongInput();
+    (playerTextView as OrangeManTextViewScript)?.OnWrongWrongInput();
     }
 
     public void SetNewTargetPhrase(string phrase)
@@ -23,7 +24,7 @@ public class PlayerTextPresenterScript : MonoBehaviour
 
     public void OnPhraseCompleted()
     {
-        playerTextView.OnPhraseCompleted();
+        (playerTextView as OrangeManTextViewScript)?.OnPhraseCompleted();
     }
 
     public void ClearText()

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetTextManagerScript : MonoBehaviour
@@ -10,7 +7,7 @@ public class TargetTextManagerScript : MonoBehaviour
     private int currentTextStorageIndex;
     private int currentPhraseIndex;
 
-    private void Start()
+    private void OnEnable()
     {
         currentTextStorageIndex = UnityEngine.Random.Range(0, textStorages.Length); //Replace
         currentPhraseIndex = 0;
@@ -25,14 +22,16 @@ public class TargetTextManagerScript : MonoBehaviour
 
     public void OnThePhraseEnd()
     {
+        currentPhraseIndex++;
+
         if (currentPhraseIndex < textStorages[currentTextStorageIndex].phrases.Length)
         {
-            currentPhraseIndex++;
             SetNewTargetStorage();
         }
         else
         {
-            Debug.Log("HAHA IT'S OVER");
+            playerTextInteractor.SetNewTargetPhrase("");
+            //
         }
     }
 }

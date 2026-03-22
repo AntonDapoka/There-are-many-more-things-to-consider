@@ -26,17 +26,23 @@ public class NPCScript : MonoBehaviour
 
     protected void Awake()
     {
+        if (agent3D != null)
+        {
+            agent3D.updateRotation = false;
+            agent3D.updateUpAxis = false;
+        }
+    }
+
+    protected virtual void OnEnable()
+    {
         targetSpeed = Random.Range(speedMin, speedMax);
         wobbleOffset = Random.insideUnitCircle * wobbleStrength;
 
-        agent3D.updateRotation = false;
-        agent3D.updateUpAxis = false;
-    }
-
-    protected virtual void Start()
-    {
-        Vector3 startPos = ToNavMesh(transform.position);
-        agent3D.Warp(startPos);
+        if (agent3D != null)
+        {
+            Vector3 navPos = ToNavMesh(To2D(transform.position));
+            agent3D.Warp(navPos);
+        }
     }
 
     protected void HandleSpeed()
