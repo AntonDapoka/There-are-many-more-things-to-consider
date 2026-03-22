@@ -1,137 +1,154 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerTextViewScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private TextMeshProUGUI textOutline;
-    [SerializeField] private int matchIndex = 0;
+    [SerializeField] private TextMeshProUGUI outlineText;
+
+    [Header("Outline")]
+    [SerializeField] private float outlineWidth = 1.5f;
 
     private TMP_TextInfo textInfo;
 
-    [SerializeField] private float outlineDepth = 1.5f;
+      string inputCache = "";
+    private List<string> candidates = new();
+    [SerializeField] private float candidateScrollDelay = 0.5f;
 
-    private PlayerTextSineWaveScript waveEffect;
+    private Coroutine candidateRoutine;
 
-    [SerializeField] private float waveAmplitude = 10f;
-    [SerializeField] private float waveFrequency = 2f;
-    [SerializeField] private float waveSpeed = 2f;
-    
-    private Color32 white = new(255, 255, 255, 255);
-    private Color32 red = new(255, 0, 0, 255);
-    private Color32 orange = new(255, 165, 0, 255);
+    private int matchIndex = 0;
 
-    public void DisplayTargetText(string targetText)
+    public void DisplayTargetText(string value)
     {
-        text.text = targetText;
-        textOutline.text = targetText;
-
+        inputCache = "";
         matchIndex = 0;
 
-        textOutline.fontMaterial.EnableKeyword("OUTLINE_ON");
-        textOutline.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, outlineDepth);
-        textOutline.fontMaterial.SetColor(ShaderUtilities.ID_OutlineColor, Color.black);
+        text.text = value;
+        outlineText.text = value;
 
-        TMP_Text[] texts = new TMP_Text[] { text, textOutline };
-        waveEffect = new PlayerTextSineWaveScript(texts, waveAmplitude, waveFrequency, waveSpeed);
-        waveEffect.CacheMesh();
-
-        textInfo = text.textInfo;
-
-        for (int i = 0; i < textInfo.characterCount; i++)
-            SetCharColor(i, white);
-
-        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
-    }
-
-    private void Update()
-    {
-        waveEffect?.ApplyWave();
-    }
-
-    public void UpdateMatched(char currentInput)
-    {
-        currentInput = char.ToUpper(currentInput);
-
-        while (matchIndex < textInfo.characterCount)
+        if (value != "")
         {
-            char c = text.text[matchIndex];
-
-            if (!char.IsLetter(c))
-            {
-                SetCharColor(matchIndex, red);
-                matchIndex++;
-                continue;
-            }
-
-            if (char.ToUpper(c) == currentInput)
-            {
-                SetCharColor(matchIndex, red);
-                matchIndex++;
-            }
-
-            break;
+            SetupOutline();
         }
 
-        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
+        UpdateTextInfo();
     }
 
-    public void ClearText()
+    private void SetupOutline()
     {
-        DisplayTargetText("");
+        outlineText.fontMaterial.EnableKeyword("OUTLINE_ON");
+        outlineText.fontMaterial.SetFloat(ShaderUtilities.ID_OutlineWidth, outlineWidth);
+        outlineText.fontMaterial.SetColor(ShaderUtilities.ID_OutlineColor, Color.black);
     }
 
-    public void OnWrongInput(char wrongInput)
+    private void UpdateTextInfo()
     {
-        if (matchIndex <= 0)
+        text.ForceMeshUpdate();
+        textInfo = text.textInfo;
+    }
+
+    public void UpdateMatched(char c)
+    {
+        if (textInfo == null || textInfo.characterCount == 0)
             return;
 
-        matchIndex--;
+        inputCache += char.ToUpper(c);
+        ApplyInput();
+        
+    }
 
-        while (matchIndex >= 0)
+    public void OnWrongInput()
+    {
+        if (inputCache.Length == 0)
+            return;
+
+        inputCache = inputCache[..^1];
+        ApplyInput();
+    }
+
+    private void ApplyInput()
+    {
+        matchIndex = 0;
+
+        int inputIndex = 0;
+
+        for (int i = 0; i < textInfo.characterCount && inputIndex < inputCache.Length; i++)
         {
-            char c = text.text[matchIndex];
+            char c = text.text[i];
 
-            SetCharColor(matchIndex, white);
+            if (!char.IsLetter(c))
+                continue;
 
-            if (char.IsLetter(c))
+            if (char.ToUpper(c) != inputCache[inputIndex])
                 break;
 
-            matchIndex--;
+            matchIndex = i + 1;
+            inputIndex++;
+        }
+    }
+
+    public void SetCandidatePhrases(List<string> phrases)
+    {
+        if (phrases == null || phrases.Count == 0)
+        {
+            StopCandidateRoutine();
+            ClearText();
+            return;
         }
 
-        if (matchIndex < 0)
-            matchIndex = 0;
+        candidates = phrases;
 
-        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
+        StopCandidateRoutine();
+        candidateRoutine = StartCoroutine(ScrollCandidates());
+    }
+
+    private void StopCandidateRoutine()
+    {
+        if (candidateRoutine != null)
+        {
+            StopCoroutine(candidateRoutine);
+            candidateRoutine = null;
+        }
     }
 
     public void OnPhraseCompleted()
     {
-        for (int i = 0; i < textInfo.characterCount; i++)
-        {
-            SetCharColor(i, orange);
-        }
-
-        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
+        // 
     }
 
-    private void SetCharColor(int index, Color32 color)
+    public void ClearText()
     {
-        var charInfo = textInfo.characterInfo[index];
-        if (!charInfo.isVisible)
-            return;
+        StopCandidateRoutine();
 
-        int vertexIndex = charInfo.vertexIndex;
-        int materialIndex = charInfo.materialReferenceIndex;
+        candidates.Clear();
 
-        var colors = textInfo.meshInfo[materialIndex].colors32;
+        DisplayTargetText("");
+    }
 
-        colors[vertexIndex + 0] = color;
-        colors[vertexIndex + 1] = color;
-        colors[vertexIndex + 2] = color;
-        colors[vertexIndex + 3] = color;
+    public void RebuildMatched(string input)
+    {
+        inputCache = input.ToUpper();
+        ApplyInput();
+    }
+
+    private IEnumerator ScrollCandidates()
+    {
+        while (candidates != null && candidates.Count > 0)
+        {
+            for (int i = 0; i < candidates.Count; i++)
+            {
+                string phrase = candidates[i];
+
+                DisplayTargetText(phrase);
+                ApplyInput();
+
+                yield return new WaitForSeconds(candidateScrollDelay);
+            }
+        }
+
+        candidateRoutine = null;
     }
 }

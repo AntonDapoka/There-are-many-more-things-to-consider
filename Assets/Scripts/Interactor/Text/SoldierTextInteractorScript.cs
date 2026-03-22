@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +6,11 @@ public class SoldierTextInteractorScript : PlayerTextInteractorScript
     [Header("Phrases Pool:")]
     [SerializeField] protected TextStorage textStorage;
 
-    protected List<string> normalizedPhrases = new();
+    [Header("Soldiers:")]
+    [SerializeField] private SoldierScript[] soldiers;
 
+    protected List<string> normalizedPhrases = new();
     protected List<int> candidateIndices = new();
-    protected Coroutine cyclingCoroutine;
-    protected int currentCandidatePointer = 0;
 
     private void Awake()
     {
@@ -21,170 +20,120 @@ public class SoldierTextInteractorScript : PlayerTextInteractorScript
         }
     }
 
-    protected void TrySelectPhrase(char firstLetter)
+    public override void ProcessSymbol(char newLetter)
     {
-        candidateIndices.Clear();
+        newLetter = char.ToUpper(newLetter);
+
+        string testInput = currentInput + newLetter;
+
+        List<int> newCandidates = GetMatchingCandidates(testInput);
+
+        if (newCandidates.Count > 0)
+        {
+            currentInput = testInput;
+            candidateIndices = newCandidates;
+
+            playerTextPresenter.UpdateMatched(newLetter);
+            SendCandidatesToPresenter();
+
+            if (candidateIndices.Count == 1)
+            {
+                string phrase = normalizedPhrases[candidateIndices[0]];
+                if (currentInput.Length >= phrase.Length)
+                    OnPhraseCompleted();
+            }
+
+            return;
+        }
+        OnWrongInput(newLetter);
+
+        if (currentInput.Length > 0)
+        {
+            currentInput = currentInput.Substring(0, currentInput.Length - 1);
+
+            candidateIndices = GetMatchingCandidates(currentInput);
+
+            SendCandidatesToPresenter();
+            playerTextPresenter.RebuildMatched(currentInput);
+        }
+        else
+        {
+            SendCandidatesToPresenter();
+        }
+    }
+
+    protected List<int> GetMatchingCandidates(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return new List<int>();
+
+        List<int> result = new();
 
         for (int i = 0; i < normalizedPhrases.Count; i++)
         {
-            if (normalizedPhrases[i].Length == 0) continue;
+            string phrase = normalizedPhrases[i];
 
-            if (normalizedPhrases[i][0] == firstLetter)
+            if (phrase.Length < input.Length)
+                continue;
+
+            bool match = true;
+
+            for (int j = 0; j < input.Length; j++)
             {
-                candidateIndices.Add(i);
+                if (phrase[j] != input[j])
+                {
+                    match = false;
+                    break;
+                }
             }
+
+            if (match)
+                result.Add(i);
         }
 
-        if (candidateIndices.Count == 0)
-        {
-            Debug.Log("No phrase found for letter: " + firstLetter);
-            return;
-        }
-
-        currentCandidatePointer = 0;
-
-        int firstIdx = candidateIndices[0];
-        SetCurrentPhrase(textStorage.phrases[firstIdx], normalizedPhrases[firstIdx]);
-
-        matchIndex = 1;
-        currentInput = firstLetter.ToString();
-        playerTextPresenter.UpdateMatched(firstLetter);
-
-        if (candidateIndices.Count > 1)
-        {
-            if (cyclingCoroutine != null)
-                StopCoroutine(cyclingCoroutine);
-
-            cyclingCoroutine = StartCoroutine(CyclePhrases());
-        }
-
-        if (matchIndex >= currentTargetPhrase.Length)
-        {
-            OnPhraseCompleted();
-        }
+        return result;
     }
 
-    protected IEnumerator CyclePhrases()
+    protected void SendCandidatesToPresenter()
     {
-        while (candidateIndices.Count > 1)
+        List<string> result = new();
+
+        foreach (var i in candidateIndices)
         {
-            currentCandidatePointer = (currentCandidatePointer + 1) % candidateIndices.Count;
-
-            int idx = candidateIndices[currentCandidatePointer];
-            playerTextPresenter.SetNewTargetPhrase(textStorage.phrases[idx]);
-
-            yield return new WaitForSeconds(0.5f);
+            result.Add(textStorage.phrases[i]);
         }
-    }
 
-    protected void SetCurrentPhrase(string original, string normalized)
-    {
-        currentTargetPhrase = normalized;
-
-        matchIndex = 0;
-        currentInput = "";
-        lastChar = '\0';
-
-        playerTextPresenter.SetNewTargetPhrase(original);
+        playerTextPresenter.SetCandidatePhrases(result);
     }
 
     protected void ResetPhrase()
     {
-        currentTargetPhrase = "";
         currentInput = "";
-        matchIndex = 0;
-
         candidateIndices.Clear();
 
-        if (cyclingCoroutine != null)
-        {
-            StopCoroutine(cyclingCoroutine);
-            cyclingCoroutine = null;
-        }
-
         playerTextPresenter.ClearText();
-    }
-
-    public override void ProcessSymbol(char newLetter)
-    {
-        newLetter = char.ToUpper(newLetter);
-        lastChar = newLetter;
-
-        if (currentTargetPhrase == "")
-        {
-            TrySelectPhrase(newLetter);
-            return;
-        }
-
-        if (matchIndex >= currentTargetPhrase.Length)
-            return;
-
-        if (newLetter == currentTargetPhrase[matchIndex])
-        {
-            matchIndex++;
-            currentInput += newLetter;
-
-            playerTextPresenter.UpdateMatched(newLetter);
-
-            FilterCandidates();
-
-            if (matchIndex >= currentTargetPhrase.Length)
-            {
-                OnPhraseCompleted();
-            }
-        }
-        else
-        {
-            if (matchIndex == 0)
-            {
-                ResetPhrase();
-                return;
-            }
-
-            matchIndex--;
-
-            OnWrongInput(newLetter);
-        }
-    }
-
-    protected void FilterCandidates()
-    {
-        candidateIndices.RemoveAll(i =>
-        {
-            string phrase = normalizedPhrases[i];
-
-            if (phrase.Length <= matchIndex) return true;
-
-            return phrase[matchIndex] != lastChar;
-        });
-
-        if (candidateIndices.Count == 0)
-        {
-            ResetPhrase();
-            return;
-        }
-
-        if (candidateIndices.Count == 1)
-        {
-            if (cyclingCoroutine != null)
-            {
-                StopCoroutine(cyclingCoroutine);
-                cyclingCoroutine = null;
-            }
-
-            int idx = candidateIndices[0];
-            SetCurrentPhrase(textStorage.phrases[idx], normalizedPhrases[idx]);
-
-            playerTextPresenter.UpdateMatched(currentInput.ToCharArray()[currentInput.Length]);
-        }
     }
 
     protected override void OnPhraseCompleted()
     {
         Debug.Log("Phrase completed!");
+        foreach (SoldierScript soldier in soldiers)
+        {
+            soldier.SetCommand(currentInput);
+        }
 
         playerTextPresenter.OnPhraseCompleted();
-
         ResetPhrase();
     }
+
+   protected override void OnWrongInput(char wrongChar)
+   {
+        base.OnWrongInput(wrongChar);
+
+
+        if (currentInput == "")
+        {
+            ResetPhrase();
+        }
+   }
 }

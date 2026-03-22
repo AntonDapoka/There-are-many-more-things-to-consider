@@ -13,7 +13,7 @@ public class PlayerTextPresenterScript : MonoBehaviour
 
     public void OnWrongInput(char wrongInput)
     {
-        playerTextView.OnWrongInput(wrongInput);
+        playerTextView.OnWrongInput();
     }
 
     public void SetNewTargetPhrase(string phrase)
@@ -29,5 +29,15 @@ public class PlayerTextPresenterScript : MonoBehaviour
     public void ClearText()
     {
         playerTextView.ClearText();
+    }
+
+    public void SetCandidatePhrases(List<string> phrases)
+    {
+        playerTextView.SetCandidatePhrases(phrases);
+    }
+
+    public void RebuildMatched(string input)
+    {
+        playerTextView.RebuildMatched(input);
     }
 }

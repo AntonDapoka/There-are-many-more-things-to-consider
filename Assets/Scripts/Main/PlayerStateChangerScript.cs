@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Drawing;
+using UnityEngine.UI;
 
 public class PlayerStateChangerScript : MonoBehaviour
 {
@@ -13,7 +13,6 @@ public class PlayerStateChangerScript : MonoBehaviour
 
     [Header("Environments")]
     [SerializeField] private GameObject environmentOffice;
-    [SerializeField] private OvalOfficeColliderScript officeCollider;
     [SerializeField] private GameObject environmentBattlefield;
 
     [Header("Prefabs Soldiers")]
@@ -38,7 +37,6 @@ public class PlayerStateChangerScript : MonoBehaviour
     {
         environmentBattlefield.SetActive(false);
         environmentOffice.SetActive(true);
-        officeCollider.isTurnOn = true;
 
         soldierBlinky.SetActive(false);
         soldierPinky.SetActive(false);
@@ -52,7 +50,6 @@ public class PlayerStateChangerScript : MonoBehaviour
     public void SetSoldierState()
     {
         environmentOffice.SetActive(false);
-        officeCollider.isTurnOn = false;
         environmentBattlefield.SetActive(true);
 
         soldierBlinky.SetActive(true);
