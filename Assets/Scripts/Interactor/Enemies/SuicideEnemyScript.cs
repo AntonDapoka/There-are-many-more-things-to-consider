@@ -2,42 +2,22 @@ using UnityEngine;
 
 public class SuicideEnemyScript : EnemyScript
 {
-    [SerializeField] private Transform[] playerTransforms;
-
-    private void Update()
+    protected void Update()
     {
-        if (!agent.isOnNavMesh) return;
-        if (playerTransforms.Length == 0) return;
+        if (!agent3D.isOnNavMesh) return;
+        if (playerTargets.Length == 0) return;
 
-        Transform nearestPlayer = GetNearestPlayer();
-        if (nearestPlayer == null) return;
+        Transform target = GetNearestPlayer();
+        if (target == null) return;
 
         HandleSpeed();
         HandleWobble();
 
-        Vector2 target2D = (Vector2)nearestPlayer.position;
-        agent.SetDestination(ToNavMesh(target2D));
+        Vector2 target2D = (Vector2)target.position + wobbleOffset;
 
-        Vector3 navPos = agent.nextPosition;
-        transform.position = To2D(navPos);
+        agent3D.SetDestination(ToNavMesh(target2D));
+
+        transform.position = To2D(agent3D.nextPosition);
     }
 
-    private Transform GetNearestPlayer()
-    {
-        Transform nearest = null;
-        float minDistSq = float.MaxValue;
-
-        foreach (var player in playerTransforms)
-        {
-            if (player == null) continue;
-            float distSq = ((Vector2)player.position - To2D(transform.position)).sqrMagnitude;
-            if (distSq < minDistSq)
-            {
-                minDistSq = distSq;
-                nearest = player;
-            }
-        }
-
-        return nearest;
-    }
 }

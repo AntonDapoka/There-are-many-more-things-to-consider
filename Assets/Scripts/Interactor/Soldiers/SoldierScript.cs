@@ -4,6 +4,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class SoldierScript : NPCScript
 {
+    [SerializeField] private Transform playerTransform;
+
     public enum Command
     {
         None,
@@ -27,7 +29,7 @@ public class SoldierScript : NPCScript
 
     protected void Update()
     {
-        if (!agent.isOnNavMesh) return;
+        if (!agent3D.isOnNavMesh) return;
 
         HandleSpeed();
         HandleWobble();
@@ -54,7 +56,7 @@ public class SoldierScript : NPCScript
                 break;
         }
 
-        transform.position = To2D(agent.nextPosition);
+        transform.position = To2D(agent3D.nextPosition);
     }
 
     public void SetCommand(string command)
@@ -96,7 +98,7 @@ public class SoldierScript : NPCScript
     {
         if (playerTransform == null) return;
 
-        Vector2 selfPos = To2D(agent.nextPosition);
+        Vector2 selfPos = To2D(agent3D.nextPosition);
         Vector2 playerPos = playerTransform.position;
 
         float distance = Vector2.Distance(selfPos, playerPos);
@@ -109,25 +111,25 @@ public class SoldierScript : NPCScript
 
         Vector2 target = playerPos + wobbleOffset;
 
-        agent.isStopped = false;
-        agent.SetDestination(ToNavMesh(target));
+        agent3D.isStopped = false;
+        agent3D.SetDestination(ToNavMesh(target));
     }
 
     protected void Move(Vector2 direction)
     {
-        Vector2 selfPos = To2D(agent.nextPosition);
+        Vector2 selfPos = To2D(agent3D.nextPosition);
         Vector2 target = selfPos + direction.normalized * 10f;
 
         target += wobbleOffset;
 
-        agent.isStopped = false;
-        agent.SetDestination(ToNavMesh(target));
+        agent3D.isStopped = false;
+        agent3D.SetDestination(ToNavMesh(target));
     }
 
     protected void Stop()
     {
         isRunning = false;
-        agent.isStopped = true;
+        agent3D.isStopped = true;
     }
 
     protected new void HandleSpeed()
@@ -139,7 +141,7 @@ public class SoldierScript : NPCScript
             speed *= runMultiplier;
         }
 
-        agent.speed = speed;
+        agent3D.speed = speed;
     }
 
     protected new void HandleWobble()

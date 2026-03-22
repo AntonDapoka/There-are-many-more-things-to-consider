@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class NPCScript : MonoBehaviour
 {
-    [SerializeField] protected Transform playerTransform;
+    [Header("References")]
+    [SerializeField] protected NavMeshAgent agent3D;  
+    [SerializeField] protected Transform[] playerTargets;
 
     [Header("Movement")]
     [SerializeField] protected float speedMin = 1.5f;
@@ -17,37 +18,25 @@ public class NPCScript : MonoBehaviour
     [SerializeField] protected float wobbleStrength = 1.1f;
     [SerializeField] protected float wobbleChangeInterval = 2f;
 
-    protected NavMeshAgent agent;
     protected float targetSpeed;
     protected Vector2 wobbleOffset;
     protected float wobbleTimer;
 
-    protected bool canShoot = false;
+    public bool canShoot = false;
 
     protected void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updatePosition = false;
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        
         targetSpeed = Random.Range(speedMin, speedMax);
         wobbleOffset = Random.insideUnitCircle * wobbleStrength;
+
+        agent3D.updateRotation = false;
+        agent3D.updateUpAxis = false;
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
-        if (!agent.isOnNavMesh)
-        {
-            if (NavMesh.SamplePosition(ToNavMesh(transform.position), out NavMeshHit hit, 5f, NavMesh.AllAreas))
-            {
-                agent.Warp(hit.position);
-            }
-        }
-        else
-        {
-            agent.Warp(ToNavMesh(transform.position));
-        }
+        Vector3 startPos = ToNavMesh(transform.position);
+        agent3D.Warp(startPos);
     }
 
     protected void HandleSpeed()
@@ -57,8 +46,10 @@ public class NPCScript : MonoBehaviour
             targetSpeed = Random.Range(speedMin, speedMax);
         }
 
-        agent.speed = Mathf.Lerp(agent.speed, targetSpeed, Time.deltaTime * speedChangeRate);
+        agent3D.speed = Mathf.Lerp(agent3D.speed, targetSpeed, Time.deltaTime * speedChangeRate);
     }
+
+
 
     protected void HandleWobble()
     {
@@ -71,6 +62,27 @@ public class NPCScript : MonoBehaviour
         }
     }
 
+        
+    protected Transform GetNearestPlayer()
+    {
+        Transform nearest = null;
+        float minDist = float.MaxValue;
+
+        foreach (var p in playerTargets)
+        {
+            if (p == null) continue;
+
+            float dist = ((Vector2)p.position - (Vector2)transform.position).sqrMagnitude;
+
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearest = p;
+            }
+        }
+
+        return nearest;
+    }
 
     protected Vector3 ToNavMesh(Vector2 pos)
     {
@@ -81,7 +93,4 @@ public class NPCScript : MonoBehaviour
     {
         return new Vector2(pos.x, pos.z);
     }
-
-    public bool CanShoot() => canShoot;
-
 }

@@ -25,7 +25,7 @@ public class ShootingScript : MonoBehaviour
 
         fireCooldown -= Time.deltaTime;
 
-        if (shooter.CanShoot() && fireCooldown <= 0f)
+        if (shooter.canShoot && fireCooldown <= 0f)
         {
             Shoot();
             fireCooldown = fireRate;

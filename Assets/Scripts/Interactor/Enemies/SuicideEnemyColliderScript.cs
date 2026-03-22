@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SuicideEnemyColliderScript : MonoBehaviour
 {
     [SerializeField] protected EnemyPresenterScript enemyPresenter;
-    [SerializeField] private SuicideEnemyScript enemy;
+    [SerializeField] private GameObject enemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,11 +14,10 @@ public class SuicideEnemyColliderScript : MonoBehaviour
             {
                 suicideEnemyPresenter.PlaySuicideEffect(transform.position);
             }
-            Debug.Log("Here");
-            Destroy(enemy.gameObject);
+            Destroy(enemy);
         }
     }
-/*
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if ( other.GetComponentInParent<PlayerMarker>() != null || other.GetComponentInParent<SoldierMarker>() != null)
@@ -30,8 +27,7 @@ public class SuicideEnemyColliderScript : MonoBehaviour
             {
                 suicideEnemyPresenter.PlaySuicideEffect(transform.position);
             }
-            Debug.Log("NO Here");
-            Destroy(enemy.gameObject);
+            Destroy(enemy);
         }
-    }*/
+    }
 }

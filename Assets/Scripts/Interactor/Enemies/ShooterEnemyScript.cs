@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class ShooterEnemyScript : EnemyScript
 {
-    [SerializeField] protected Transform[] targets;
     [Header("Combat")]
     [SerializeField] protected float attackDistance = 5f;
     [SerializeField] protected float stoppingDistance = 4f;
@@ -12,14 +10,17 @@ public class ShooterEnemyScript : EnemyScript
     [SerializeField] protected float shootCheckRadius = 0.1f;
     [SerializeField] protected float retreatDistance = 2.5f;
 
+    [Header("References")]
     [SerializeField] private Transform gunTransform;
-    protected Transform currentTarget;
 
+    [Header("Rotation")]
     [SerializeField] private float rotationSpeed = 720f;
+
+    protected Transform currentTarget;
 
     protected void Update()
     {
-        if (!agent.isOnNavMesh) return;
+        if (!agent3D.isOnNavMesh) return;
 
         currentTarget = FindClosestPlayer();
 
@@ -28,7 +29,7 @@ public class ShooterEnemyScript : EnemyScript
         HandleSpeed();
         HandleWobble();
 
-        Vector2 selfPos = To2D(agent.nextPosition);
+        Vector2 selfPos = To2D(agent3D.nextPosition);
         Vector2 targetPos = currentTarget.position;
 
         float distance = Vector2.Distance(selfPos, targetPos);
@@ -41,22 +42,11 @@ public class ShooterEnemyScript : EnemyScript
         else if (distance > attackDistance) Move(targetPos);
         else Stop();
 
-        transform.position = To2D(agent.nextPosition);
+        transform.position = To2D(agent3D.nextPosition);
 
-        if (currentTarget != null)
-            SmoothLookAt(currentTarget);
-
-        if (gunTransform != null)
+        // Only the gun rotates toward target; character body does not rotate
+        if (gunTransform != null && currentTarget != null)
             SmoothLookAtGun(currentTarget);
-    }
-
-    protected void SmoothLookAt(Transform target)
-    {
-        Vector2 direction = (target.position - transform.position).normalized;
-        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(0f, 0f, targetAngle);
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     protected void SmoothLookAtGun(Transform target)
@@ -70,19 +60,23 @@ public class ShooterEnemyScript : EnemyScript
 
     protected Transform FindClosestPlayer()
     {
+        Transform[] searchTargets = playerTargets;
+        if (searchTargets == null) return null;
+
         float minDist = float.MaxValue;
         Transform closest = null;
+        Vector2 selfPos = To2D(agent3D.nextPosition);
 
-        foreach (var player in targets)
+        foreach (var player in searchTargets)
         {
-            float dist = Vector2.Distance(To2D(agent.nextPosition), player.position);
+            if (player == null) continue;
+            float dist = Vector2.Distance(selfPos, player.position);
             if (dist < minDist)
             {
                 minDist = dist;
                 closest = player;
             }
         }
-
         return closest;
     }
 
@@ -95,10 +89,10 @@ public class ShooterEnemyScript : EnemyScript
 
     protected void SeekLineOfSight(Vector2 targetPos)
     {
-        Vector2 selfPos = To2D(agent.nextPosition);
+        Vector2 selfPos = To2D(agent3D.nextPosition);
         float desiredDistance = Mathf.Clamp(Vector2.Distance(selfPos, targetPos), retreatDistance, attackDistance);
 
-        int samples = 8;
+        int samples = 12;
         float angleStep = 360f / samples;
 
         Vector2 bestPoint = targetPos;
@@ -112,9 +106,10 @@ public class ShooterEnemyScript : EnemyScript
 
             if (NavMesh.SamplePosition(ToNavMesh(candidate), out NavMeshHit navHit, 1.5f, NavMesh.AllAreas))
             {
-                if (HasLineOfSightFrom(candidate, targetPos))
+                Vector2 sampledPoint = To2D(navHit.position);
+                if (HasLineOfSightFrom(sampledPoint, targetPos))
                 {
-                    bestPoint = To2D(navHit.position);
+                    bestPoint = sampledPoint;
                     found = true;
                     break;
                 }
@@ -123,8 +118,8 @@ public class ShooterEnemyScript : EnemyScript
 
         if (found)
         {
-            agent.isStopped = false;
-            agent.SetDestination(ToNavMesh(bestPoint));
+            agent3D.isStopped = false;
+            agent3D.SetDestination(ToNavMesh(bestPoint + wobbleOffset));
         }
         else
         {
@@ -157,22 +152,30 @@ public class ShooterEnemyScript : EnemyScript
     protected void Move(Vector2 targetPos)
     {
         Vector2 target2D = targetPos + wobbleOffset;
-        agent.isStopped = false;
-        agent.SetDestination(ToNavMesh(target2D));
+        agent3D.isStopped = false;
+        agent3D.SetDestination(ToNavMesh(target2D));
     }
 
     protected void Stop()
     {
-        agent.isStopped = true;
+        agent3D.isStopped = true;
     }
 
     protected void Retreat(Vector2 selfPos, Vector2 targetPos)
     {
         Vector2 dir = (selfPos - targetPos).normalized;
-        Vector2 target = selfPos + dir * (stoppingDistance + 1f);
-        target += wobbleOffset;
+        Vector2 retreatTarget = selfPos + dir * (stoppingDistance + 1f);
+        retreatTarget += wobbleOffset;
 
-        agent.isStopped = false;
-        agent.SetDestination(ToNavMesh(target));
+        if (NavMesh.SamplePosition(ToNavMesh(retreatTarget), out NavMeshHit navHit, 2f, NavMesh.AllAreas))
+        {
+            agent3D.isStopped = false;
+            agent3D.SetDestination(navHit.position);
+        }
+        else
+        {
+            agent3D.isStopped = false;
+            agent3D.SetDestination(ToNavMesh(retreatTarget));
+        }
     }
 }
