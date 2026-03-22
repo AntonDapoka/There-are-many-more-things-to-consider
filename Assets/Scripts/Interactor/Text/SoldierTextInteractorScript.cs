@@ -130,7 +130,6 @@ public class SoldierTextInteractorScript : PlayerTextInteractorScript
    {
         base.OnWrongInput(wrongChar);
 
-
         if (currentInput == "")
         {
             ResetPhrase();

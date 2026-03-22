@@ -22,6 +22,8 @@ public class NPCScript : MonoBehaviour
     protected Vector2 wobbleOffset;
     protected float wobbleTimer;
 
+    protected bool canShoot = false;
+
     protected void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -33,7 +35,7 @@ public class NPCScript : MonoBehaviour
         wobbleOffset = Random.insideUnitCircle * wobbleStrength;
     }
 
-        protected void Start()
+    protected void Start()
     {
         if (!agent.isOnNavMesh)
         {
@@ -79,4 +81,7 @@ public class NPCScript : MonoBehaviour
     {
         return new Vector2(pos.x, pos.z);
     }
+
+    public bool CanShoot() => canShoot;
+
 }

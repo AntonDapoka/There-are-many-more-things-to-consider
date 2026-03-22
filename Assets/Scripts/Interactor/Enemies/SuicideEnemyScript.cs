@@ -2,40 +2,42 @@ using UnityEngine;
 
 public class SuicideEnemyScript : EnemyScript
 {
+    [SerializeField] private Transform[] playerTransforms;
+
     private void Update()
     {
         if (!agent.isOnNavMesh) return;
-        if (playerTransform == null) return;
+        if (playerTransforms.Length == 0) return;
+
+        Transform nearestPlayer = GetNearestPlayer();
+        if (nearestPlayer == null) return;
 
         HandleSpeed();
         HandleWobble();
 
-        Vector2 target2D = (Vector2)playerTransform.position + wobbleOffset;
+        Vector2 target2D = (Vector2)nearestPlayer.position;
         agent.SetDestination(ToNavMesh(target2D));
 
         Vector3 navPos = agent.nextPosition;
         transform.position = To2D(navPos);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private Transform GetNearestPlayer()
     {
-        if (collision.collider.GetComponentInParent<PlayerMarker>() != null)
-        {
-            Destroy(gameObject);
-        }
-    }
+        Transform nearest = null;
+        float minDistSq = float.MaxValue;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponentInParent<EnemyKillZoneMarker>() != null)
+        foreach (var player in playerTransforms)
         {
-            var suicideEnemyPresenter = enemyPresenter as SuicideEnemyPresenterScript;
-            if (suicideEnemyPresenter != null)
+            if (player == null) continue;
+            float distSq = ((Vector2)player.position - To2D(transform.position)).sqrMagnitude;
+            if (distSq < minDistSq)
             {
-                suicideEnemyPresenter.PlaySuicideEffect(To2D(agent.nextPosition));
+                minDistSq = distSq;
+                nearest = player;
             }
-            
-            Destroy(gameObject);
         }
+
+        return nearest;
     }
 }
