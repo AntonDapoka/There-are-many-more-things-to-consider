@@ -15,7 +15,6 @@ public class SoldierScript : NPCScript
     }
 
     [Header("References")]
-    [Tooltip("Optional. If null, uses GetNearestPlayer() from playerTargets.")]
     [SerializeField] private Transform playerTransform;
 
     [Header("Follow")]

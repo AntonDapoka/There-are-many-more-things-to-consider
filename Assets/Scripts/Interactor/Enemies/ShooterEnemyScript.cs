@@ -44,7 +44,6 @@ public class ShooterEnemyScript : EnemyScript
 
         transform.position = To2D(agent3D.nextPosition);
 
-        // Only the gun rotates toward target; character body does not rotate
         if (gunTransform != null && currentTarget != null)
             SmoothLookAtGun(currentTarget);
     }

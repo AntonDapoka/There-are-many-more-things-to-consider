@@ -93,4 +93,9 @@ public class NPCScript : MonoBehaviour
     {
         return new Vector2(pos.x, pos.z);
     }
+
+    public void SetPlayerTargets(Transform[] targets)
+    {
+        playerTargets = targets;
+    }
 }
