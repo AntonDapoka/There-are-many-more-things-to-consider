@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class TargetTextManagerScript : MonoBehaviour
 {
     [SerializeField] private PlayerTextInteractorScript playerTextInteractor;
+    [SerializeField] private PlayerStateChangerScript playerStateChanger;
     [SerializeField] private TextStorage[] textStorages;
+    [SerializeField] private FadeInAndOutScript fadeInAndOut;
     private int currentTextStorageIndex;
     private int currentPhraseIndex;
 
@@ -31,7 +34,15 @@ public class TargetTextManagerScript : MonoBehaviour
         else
         {
             playerTextInteractor.SetNewTargetPhrase("");
-            //
+            StartCoroutine(FadeSequence());
         }
+    }
+
+    private IEnumerator FadeSequence()
+    {
+        yield return StartCoroutine(fadeInAndOut.PlayFadeOut());
+
+        playerStateChanger.SetSoldierState();
+        yield return StartCoroutine(fadeInAndOut.PlayFadeIn());
     }
 }

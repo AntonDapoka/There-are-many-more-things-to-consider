@@ -11,15 +11,19 @@ public class PlayerTextViewScript : MonoBehaviour
     [Header("Outline")]
     [SerializeField] private float outlineWidth = 1.5f;
 
+    public Color32 white = new(255, 255, 255, 255);
+    public Color32 red = new(255, 0, 0, 255);
+    public Color32 orange = new(255, 165, 0, 255);
+
     protected TMP_TextInfo textInfo;
 
-      string inputCache = "";
+    string inputCache = "";
     private List<string> candidates = new();
     [SerializeField] private float candidateScrollDelay = 0.5f;
 
     private Coroutine candidateRoutine;
 
-    protected int matchIndex = 0;
+    public int matchIndex = 0;
 
     public virtual void DisplayTargetText(string value)
     {
@@ -35,6 +39,11 @@ public class PlayerTextViewScript : MonoBehaviour
         }
 
         UpdateTextInfo();
+
+        for (int i = 0; i < textInfo.characterCount; i++)
+            SetCharColor(i, white);
+
+        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
     }
 
     private void SetupOutline()
@@ -88,6 +97,21 @@ public class PlayerTextViewScript : MonoBehaviour
             matchIndex = i + 1;
             inputIndex++;
         }
+
+        for (int i = 0; i < textInfo.characterCount; i++)
+        {
+            char c = text.text[i];
+            if (i <= matchIndex)
+            {
+                SetCharColor(matchIndex, red);
+            }
+            else
+            {
+                SetCharColor(matchIndex, red);
+            }
+        }
+
+        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
     }
 
     public void SetCandidatePhrases(List<string> phrases)
@@ -103,6 +127,7 @@ public class PlayerTextViewScript : MonoBehaviour
 
         StopCandidateRoutine();
         candidateRoutine = StartCoroutine(ScrollCandidates());
+        
     }
 
     private void StopCandidateRoutine()
@@ -121,6 +146,8 @@ public class PlayerTextViewScript : MonoBehaviour
         candidates.Clear();
 
         DisplayTargetText("");
+
+        text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
     }
 
     public void RebuildMatched(string input)
@@ -145,5 +172,22 @@ public class PlayerTextViewScript : MonoBehaviour
         }
 
         candidateRoutine = null;
+    }
+
+    private void SetCharColor(int index, Color32 color)
+    {
+        var charInfo = textInfo.characterInfo[index];
+        if (!charInfo.isVisible)
+            return;
+
+        int vertexIndex = charInfo.vertexIndex;
+        int materialIndex = charInfo.materialReferenceIndex;
+
+        var colors = textInfo.meshInfo[materialIndex].colors32;
+
+        colors[vertexIndex + 0] = color;
+        colors[vertexIndex + 1] = color;
+        colors[vertexIndex + 2] = color;
+        colors[vertexIndex + 3] = color;
     }
 }

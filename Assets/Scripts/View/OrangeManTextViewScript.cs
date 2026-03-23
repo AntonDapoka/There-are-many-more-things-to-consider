@@ -10,11 +10,6 @@ public class OrangeManTextViewScript : PlayerTextViewScript
 
     [SerializeField] private float outlineDepth = 1.5f;
 
-
-    private Color32 white = new(255, 255, 255, 255);
-    private Color32 red = new(255, 0, 0, 255);
-    private Color32 orange = new(255, 165, 0, 255);
-
     public override void DisplayTargetText(string targetText)
     {
         text.text = targetText;
@@ -31,7 +26,6 @@ public class OrangeManTextViewScript : PlayerTextViewScript
         textInfo = text.textInfo;
 
         for (int i = 0; i < textInfo.characterCount; i++)
-
             SetCharColor(i, white);
 
 
@@ -67,8 +61,6 @@ public class OrangeManTextViewScript : PlayerTextViewScript
 
     public void OnWrongWrongInput()
     {
-        Debug.Log("Hello");
-
         if (matchIndexx <= 0)
             return;
 

@@ -21,7 +21,6 @@ public class SoldierScript : NPCScript
     [SerializeField] private EnemyManagerScript enemyManager;
     [SerializeField] private Transform gunTransform;
 
-    [Tooltip("Если цель агента ближе к игроку чем это — считаем, что идём к игроку (Stop при followDistance не отменяет idle-shuffle в сторону).")]
     [SerializeField] private float followDestinationNearPlayer = 1.25f;
 
     [Header("Combat (FIRE)")]
@@ -40,7 +39,7 @@ public class SoldierScript : NPCScript
     [SerializeField] private float runMultiplier = 1.8f;
     [SerializeField] private float moveDistance = 10f;
 
-    [Header("Idle shuffle (стоя на месте)")]
+    [Header("Idle shuffle")]
     [SerializeField] private float idleShuffleIntervalMin = 2.5f;
     [SerializeField] private float idleShuffleIntervalMax = 6f;
     [SerializeField] private float idleShuffleDistanceMin = 0.35f;

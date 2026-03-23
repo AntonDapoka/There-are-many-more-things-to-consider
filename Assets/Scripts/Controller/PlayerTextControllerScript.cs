@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerTextControllerScript : InputHandlerScript
 {
     [SerializeField] private PlayerTextInteractorScript[] playerTextInteractors;
+    public bool isTrump = true;
 
     public override void HandleInput(KeyCode key, bool isPressed)
     {
@@ -18,8 +19,13 @@ public class PlayerTextControllerScript : InputHandlerScript
             foreach (PlayerTextInteractorScript interactor in playerTextInteractors)
             {
                 if (interactor != null)
-                {
-                    interactor.ProcessSymbol(char.ToUpper(letter));
+                {   
+                    if (isTrump)
+                        (interactor as OrangeManTextInteractorScript)?.ProcessSymbol(char.ToUpper(letter));
+                    else
+                        interactor.ProcessSymbol(char.ToUpper(letter));
+
+                        
                 }
             }
             

@@ -31,7 +31,6 @@ public class FadeInAndOutScript : MonoBehaviour
 
         if (panelFade == null)
         {
-            Debug.LogWarning("fadeImage не назначен!");
             yield break;
         }
 
@@ -56,13 +55,12 @@ public class FadeInAndOutScript : MonoBehaviour
 
     }
 
-    private IEnumerator PlayFadeIn()
+    public IEnumerator PlayFadeIn()
     {
         panelFade.gameObject.SetActive(true);
 
         if (panelFade == null)
         {
-            Debug.LogWarning("fadeImage не назначен!");
             yield break;
         }
 
