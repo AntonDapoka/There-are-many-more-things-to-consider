@@ -214,14 +214,12 @@ public class SoldierScript : NPCScript
         SmoothLookAtGun(currentFireTarget);
 }
 
-    // Новый метод проверки линии огня с учётом стабильности
     private bool HasLineOfSightStable(Vector2 origin, Vector2 target)
     {
         Vector2 dir = (target - origin).normalized;
         float dist = Vector2.Distance(origin, target);
         if (dist < 0.001f) return true;
 
-        // увеличиваем радиус для стабильности
         float checkRadius = Mathf.Max(shootCheckRadius, 0.2f);
 
         RaycastHit2D hit = Physics2D.CircleCast(origin, checkRadius, dir, dist, obstacleMask);
