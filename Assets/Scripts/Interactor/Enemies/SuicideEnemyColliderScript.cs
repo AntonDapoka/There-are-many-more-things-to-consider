@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SuicideEnemyColliderScript : MonoBehaviour
 {
-    [SerializeField] protected EnemyPresenterScript enemyPresenter;
+    public EnemyPresenterScript enemyPresenter;
     [SerializeField] private GameObject enemy;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -15,6 +15,7 @@ public class SuicideEnemyColliderScript : MonoBehaviour
                 suicideEnemyPresenter.PlaySuicideEffect(transform.position);
             }
             Destroy(enemy);
+            //
         }
     }
 
@@ -26,8 +27,10 @@ public class SuicideEnemyColliderScript : MonoBehaviour
             if (suicideEnemyPresenter != null)
             {
                 suicideEnemyPresenter.PlaySuicideEffect(transform.position);
+                Debug.Log("dead1");
             }
             Destroy(enemy);
+            //Debug.Log("dead1");
         }
     }
 }

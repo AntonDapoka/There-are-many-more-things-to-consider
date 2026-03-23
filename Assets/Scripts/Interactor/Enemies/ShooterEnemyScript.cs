@@ -68,7 +68,7 @@ public class ShooterEnemyScript : EnemyScript
 
         foreach (var player in searchTargets)
         {
-            if (player == null) continue;
+            if (player == null  || (!player.gameObject.activeSelf)) continue;
             float dist = Vector2.Distance(selfPos, player.position);
             if (dist < minDist)
             {

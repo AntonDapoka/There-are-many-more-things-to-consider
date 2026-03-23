@@ -8,9 +8,11 @@ public class EnemyManagerScript : MonoBehaviour
     [SerializeField] private GameObject shooterEnemyPrefab;
     [SerializeField] private GameObject suicideEnemyPrefab;
 
+    [SerializeField] private EnemyPresenterScript enemyPresenterScript;
+
     [Header("Targets")]
-    [Tooltip("Player and soldiers - enemies will receive this array as targets")]
     [SerializeField] private Transform[] friendlies;
+    [SerializeField] private GameObject[] soldiers;
 
     [Header("Spawn Area")]
     [SerializeField] private float minSpawnDistance = 12f;
@@ -28,9 +30,30 @@ public class EnemyManagerScript : MonoBehaviour
     private float spawnTimer;
     private readonly List<GameObject> spawnedEnemies = new();
 
-    private void Start()
+    private void OnEnable()
     {
         spawnTimer = 0f;
+
+        float radius = 5f; // радиус окружности
+        int count = 4;
+
+        for (int i = 0; i < count; i++)
+        {
+            GameObject trans = soldiers[i];
+
+            if (trans.TryGetComponent<NPCHolderScript>(out var npc))
+            {
+                float angle = i * Mathf.PI * 2f / count;
+
+                Vector2 point = new Vector2(
+                    Mathf.Cos(angle),
+                    Mathf.Sin(angle)
+                ) * radius;
+
+                npc.agentAI.transform.position = ToNavMesh(point);
+                npc.character2D.transform.position = point;
+            }
+        }
     }
 
     private void Update()
@@ -63,10 +86,18 @@ public class EnemyManagerScript : MonoBehaviour
 
         Vector3 pos = new Vector3(spawnPos.Value.x, 0f, spawnPos.Value.y);
         GameObject enemy = Instantiate(prefab, pos, Quaternion.identity);
+        enemy.GetComponent<NPCHolderScript>().agentAI.transform.position = pos;
+        enemy.GetComponent<NPCHolderScript>().character2D.transform.position = ToNavMesh(pos);
 
-        if (enemy.TryGetComponent<NPCScript>(out var npc))
+        if (enemy.GetComponent<NPCHolderScript>().character2D.TryGetComponent<NPCScript>(out var npc))
         {
             npc.SetPlayerTargets(friendlies);
+            if (npc.TryGetComponent<SuicideEnemyScript>(out var enemySui))
+            {
+                enemySui.enemyPresenter = enemyPresenterScript;
+                var comp = npc.GetComponentInChildren<SuicideEnemyColliderScript>();
+                comp.enemyPresenter = enemyPresenterScript;
+            }
         }
 
         spawnedEnemies.Add(enemy);
@@ -101,7 +132,7 @@ public class EnemyManagerScript : MonoBehaviour
         int count = 0;
         foreach (var t in friendlies)
         {
-            if (t == null) continue;
+            if (t == null || (!t.gameObject.activeSelf)) continue;
             sum += (Vector2)t.position;
             count++;
         }
@@ -115,14 +146,14 @@ public class EnemyManagerScript : MonoBehaviour
         var list = new List<Transform>();
         foreach (var t in friendlies)
         {
-            if (t != null) list.Add(t);
+            if (t != null && (t.gameObject.activeSelf)) list.Add(t);
         }
         return list.ToArray();
     }
 
     private bool IsOnNavMesh(Vector2 pos)
     {
-        Vector3 navPos = new Vector3(pos.x, 0f, pos.y);
+        Vector3 navPos = ToNavMesh(pos);
         return NavMesh.SamplePosition(navPos, out _, 1.5f, NavMesh.AllAreas);
     }
 
@@ -130,7 +161,7 @@ public class EnemyManagerScript : MonoBehaviour
     {
         foreach (var t in targets)
         {
-            if (t == null) continue;
+            if (t == null || (!t.gameObject.activeSelf)) continue;
             float dist = Vector2.Distance(pos, (Vector2)t.position);
             if (dist < minSpawnDistance) return false;
         }
@@ -146,9 +177,15 @@ public class EnemyManagerScript : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Returns transforms of all alive enemies. Used by soldiers for FIRE command.
-    /// </summary>
+    public void DeleteEnemies()
+    {
+        for (int i = spawnedEnemies.Count - 1; i >= 0; i--)
+        {
+            if (spawnedEnemies[i] != null)
+                Destroy(spawnedEnemies[i]);
+        }
+    }
+
     public IReadOnlyList<Transform> GetAliveEnemies()
     {
         var list = new List<Transform>();
@@ -158,5 +195,15 @@ public class EnemyManagerScript : MonoBehaviour
                 list.Add(go.transform);
         }
         return list;
+    }
+
+    protected Vector2 To2D(Vector3 pos)
+    {
+        return new Vector2(pos.x, pos.z);
+    }
+
+    protected Vector3 ToNavMesh(Vector2 pos)
+    {
+        return new Vector3(pos.x, 0f, pos.y);
     }
 }

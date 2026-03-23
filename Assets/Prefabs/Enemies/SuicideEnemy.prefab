@@ -351,6 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7389162605307928988}
+  - component: {fileID: 2679143646978494580}
   m_Layer: 0
   m_Name: SuicideEnemy
   m_TagString: Untagged
@@ -375,6 +376,20 @@ Transform:
   - {fileID: 8637457777810470485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2679143646978494580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444730213002634354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6605b812a322b4899da935e18a2197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentAI: {fileID: 3095483400265338008}
+  character2D: {fileID: 8774997945087890972}
 --- !u!1 &5418914761627710892
 GameObject:
   m_ObjectHideFlags: 0

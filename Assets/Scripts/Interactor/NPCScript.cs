@@ -76,7 +76,7 @@ public class NPCScript : MonoBehaviour
 
         foreach (var p in playerTargets)
         {
-            if (p == null) continue;
+            if (p == null || !p.gameObject.activeSelf) continue;
 
             float dist = ((Vector2)p.position - (Vector2)transform.position).sqrMagnitude;
 

@@ -30,6 +30,7 @@ public class SoldierScript : NPCScript
     [SerializeField] private float rotationSpeed = 720f;
 
     private Transform currentFireTarget;
+    public List<Transform> targets;
 
     [Header("Follow")]
     [SerializeField] private float followDistance = 2.5f;
@@ -190,37 +191,56 @@ public class SoldierScript : NPCScript
     }
 
     private void HandleFire()
+{
+    Stop(); // Солдат не должен двигаться во время стрельбы
+
+    currentFireTarget = FindNearestEnemy();
+
+    if (currentFireTarget == null)
     {
-        Stop();
-        currentFireTarget = FindNearestEnemy();
+        canShoot = false;
+        return;
+    }
 
-        if (currentFireTarget == null)
-        {
-            canShoot = false;
-            return;
-        }
+    Vector2 selfPos = transform.position; // более надёжно, чем agent3D.nextPosition
+    Vector2 targetPos = currentFireTarget.position;
 
-        Vector2 selfPos = To2D(agent3D.nextPosition);
-        Vector2 targetPos = currentFireTarget.position;
-        float distance = Vector2.Distance(selfPos, targetPos);
-        bool hasLOS = HasLineOfSight(selfPos, targetPos);
+    float distance = Vector2.Distance(selfPos, targetPos);
+    bool hasLOS = HasLineOfSightStable(selfPos, targetPos);
 
-        canShoot = hasLOS && distance <= attackDistance;
+    canShoot = hasLOS && distance <= attackDistance;
 
-        if (gunTransform != null)
-            SmoothLookAtGun(currentFireTarget);
+    if (gunTransform != null && currentFireTarget != null)
+        SmoothLookAtGun(currentFireTarget);
+}
+
+    // Новый метод проверки линии огня с учётом стабильности
+    private bool HasLineOfSightStable(Vector2 origin, Vector2 target)
+    {
+        Vector2 dir = (target - origin).normalized;
+        float dist = Vector2.Distance(origin, target);
+        if (dist < 0.001f) return true;
+
+        // увеличиваем радиус для стабильности
+        float checkRadius = Mathf.Max(shootCheckRadius, 0.2f);
+
+        RaycastHit2D hit = Physics2D.CircleCast(origin, checkRadius, dir, dist, obstacleMask);
+        return hit.collider == null || hit.transform == currentFireTarget;
     }
 
     private Transform FindNearestEnemy()
     {
         if (enemyManager == null) return null;
 
-        IReadOnlyList<Transform> enemies = enemyManager.GetAliveEnemies();
-        if (enemies == null || enemies.Count == 0) return null;
 
+        IReadOnlyList<Transform> enemies = enemyManager.GetAliveEnemies();
+
+        if (enemies == null || enemies.Count == 0) return null;
+        Debug.Log(enemies.Count);
+
+        float minDist = float.MaxValue;
         Vector2 selfPos = To2D(agent3D.nextPosition);
         Transform nearest = null;
-        float minDist = float.MaxValue;
 
         foreach (var enemy in enemies)
         {

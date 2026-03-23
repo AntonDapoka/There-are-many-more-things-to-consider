@@ -10,7 +10,8 @@ public class TargetTextManagerScript : MonoBehaviour
     private int currentTextStorageIndex;
     private int currentPhraseIndex;
 
-    private void OnEnable()
+
+    public void SetStart()
     {
         currentTextStorageIndex = UnityEngine.Random.Range(0, textStorages.Length); //Replace
         currentPhraseIndex = 0;

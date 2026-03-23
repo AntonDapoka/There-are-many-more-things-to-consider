@@ -21,46 +21,51 @@ public class SoldierTextInteractorScript : PlayerTextInteractorScript
     }
 
     public override void ProcessSymbol(char newLetter)
+{
+    newLetter = char.ToUpper(newLetter);
+
+    string testInput = currentInput + newLetter;
+
+    List<int> newCandidates = GetMatchingCandidates(testInput);
+
+    if (newCandidates.Count > 0)
     {
-        newLetter = char.ToUpper(newLetter);
+        currentInput = testInput;
+        matchIndex = currentInput.Length;
 
-        string testInput = currentInput + newLetter;
+        candidateIndices = newCandidates;
 
-        List<int> newCandidates = GetMatchingCandidates(testInput);
+        playerTextPresenter.UpdateMatched(newLetter);
+        SendCandidatesToPresenter();
 
-        if (newCandidates.Count > 0)
+        if (candidateIndices.Count == 1)
         {
-            currentInput = testInput;
-            candidateIndices = newCandidates;
-
-            playerTextPresenter.UpdateMatched(newLetter);
-            SendCandidatesToPresenter();
-
-            if (candidateIndices.Count == 1)
-            {
-                string phrase = normalizedPhrases[candidateIndices[0]];
-                if (currentInput.Length >= phrase.Length)
-                    OnPhraseCompleted();
-            }
-
-            return;
+            string phrase = normalizedPhrases[candidateIndices[0]];
+            if (currentInput.Length >= phrase.Length)
+                OnPhraseCompleted();
         }
-        OnWrongInput(newLetter);
 
-        if (currentInput.Length > 0)
-        {
-            currentInput = currentInput.Substring(0, currentInput.Length - 1);
-
-            candidateIndices = GetMatchingCandidates(currentInput);
-
-            SendCandidatesToPresenter();
-            playerTextPresenter.RebuildMatched(currentInput);
-        }
-        else
-        {
-            SendCandidatesToPresenter();
-        }
+        return;
     }
+
+    OnWrongInput(newLetter);
+
+    if (currentInput.Length > 0)
+    {
+        currentInput = currentInput.Substring(0, currentInput.Length - 1);
+        matchIndex = currentInput.Length;
+
+        candidateIndices = GetMatchingCandidates(currentInput);
+
+        SendCandidatesToPresenter();
+        playerTextPresenter.RebuildMatched(currentInput);
+    }
+    else
+    {
+        matchIndex = 0;
+        SendCandidatesToPresenter();
+    }
+}
 
     protected List<int> GetMatchingCandidates(string input)
     {
@@ -109,6 +114,8 @@ public class SoldierTextInteractorScript : PlayerTextInteractorScript
     protected void ResetPhrase()
     {
         currentInput = "";
+        matchIndex = 0;
+
         candidateIndices.Clear();
 
         playerTextPresenter.ClearText();

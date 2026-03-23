@@ -11,7 +11,7 @@ public abstract class PlayerTextInteractorScript : MonoBehaviour
     [Header("Current Text Data:")]
     [SerializeField] protected string currentTargetPhrase = "";
     [SerializeField] protected string currentInput = "";
-    [SerializeField] protected int matchIndex = 0; 
+    public int matchIndex = 0; 
     [SerializeField] protected char lastChar;
 
     public virtual void SetNewTargetPhrase(string newPhrase)

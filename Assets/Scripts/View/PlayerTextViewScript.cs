@@ -5,8 +5,10 @@ using System.Collections;
 
 public class PlayerTextViewScript : MonoBehaviour
 {
+    [SerializeField] private SoldierTextInteractorScript soldierTextInteractor;
     [SerializeField] protected TextMeshProUGUI text;
     [SerializeField] protected TextMeshProUGUI outlineText;
+    public bool isTrump;
 
     [Header("Outline")]
     [SerializeField] private float outlineWidth = 1.5f;
@@ -23,12 +25,11 @@ public class PlayerTextViewScript : MonoBehaviour
 
     private Coroutine candidateRoutine;
 
-    public int matchIndex = 0;
+    public int matchIndex;
 
     public virtual void DisplayTargetText(string value)
     {
         inputCache = "";
-        matchIndex = 0;
 
         text.text = value;
         outlineText.text = value;
@@ -80,7 +81,29 @@ public class PlayerTextViewScript : MonoBehaviour
 
     private void ApplyInput()
     {
-        matchIndex = 0;
+        int logicalIndex = -1;
+
+        for (int i = 0; i < textInfo.characterCount; i++)
+        {
+            char c = textInfo.characterInfo[i].character;
+
+            if (!char.IsLetter(c))
+            {
+                SetCharColor(i, white);
+                continue;
+            }
+
+            logicalIndex++;
+
+            if (logicalIndex <= matchIndex)
+            {
+                SetCharColor(i, red);
+            }
+            else
+            {
+                SetCharColor(i, white);
+            }
+        }
 
         int inputIndex = 0;
 
@@ -94,24 +117,17 @@ public class PlayerTextViewScript : MonoBehaviour
             if (char.ToUpper(c) != inputCache[inputIndex])
                 break;
 
-            matchIndex = i + 1;
             inputIndex++;
         }
 
-        for (int i = 0; i < textInfo.characterCount; i++)
-        {
-            char c = text.text[i];
-            if (i <= matchIndex)
-            {
-                SetCharColor(matchIndex, red);
-            }
-            else
-            {
-                SetCharColor(matchIndex, red);
-            }
-        }
 
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
+    }
+
+    private void Update()
+    {
+        if (!isTrump)
+            matchIndex = soldierTextInteractor.matchIndex;
     }
 
     public void SetCandidatePhrases(List<string> phrases)

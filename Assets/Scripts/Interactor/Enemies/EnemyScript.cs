@@ -5,5 +5,5 @@ using UnityEngine.AI;
 
 public class EnemyScript : NPCScript
 {
-    [SerializeField] protected EnemyPresenterScript enemyPresenter;
+    public EnemyPresenterScript enemyPresenter;
 }
